@@ -19,7 +19,6 @@ class CreateBelongsTable extends Migration
             $table->unsignedInteger('student_id');
             $table->foreign('student_id')->references('id')->on('students');
             $table->unsignedInteger('enterprise_id');
-            $table->string('email');
             $table->foreign('enterprise_id')->references('id')->on('enterprises');
             $table->boolean('deleted');
             $table->timestamps();
