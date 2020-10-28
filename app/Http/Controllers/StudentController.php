@@ -14,6 +14,8 @@ class StudentController extends Controller
     public function index()
     {
         //
+        $Students=student::orderBy('id','DESC')->paginate(3)
+        return view('student.index',compact(Students));
     }
 
     /**
@@ -23,7 +25,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('student.create')
     }
 
     /**
@@ -45,7 +47,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $Students=Student::($id);
+        return view('student.show',compact('Students'))
     }
 
     /**
@@ -69,6 +72,10 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request,[ 'id'=>'required', 'name'=>'required', 'firstname'=>'required', 'deleted'=>'required']);
+ 
+        student::find($id)->update($request->all());
+        return redirect()->route('student.index')->with('success','Registro actualizado correctamente');
     }
 
     /**
@@ -80,5 +87,7 @@ class StudentController extends Controller
     public function destroy($id)
     {
         //
+        student::find($id)->delete();
+        return redirect()->route('student.index')->with('success','Registro eliminado correctamente');
     }
 }
