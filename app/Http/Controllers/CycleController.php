@@ -14,6 +14,8 @@ class CycleController extends Controller
     public function index()
     {
         //
+        $Cycles=cycle::orderBy('id','DESC')->paginate(3);
+        return view('cycle.index',compact('Cycles')); 
     }
 
     /**
@@ -24,6 +26,7 @@ class CycleController extends Controller
     public function create()
     {
         //
+        return view('cycle.create');
     }
 
     /**
@@ -46,6 +49,8 @@ class CycleController extends Controller
     public function show($id)
     {
         //
+        $Cycles=cycle::find($id);
+        return  view('cycle.show',compact('Cycles'));
     }
 
     /**
@@ -69,6 +74,10 @@ class CycleController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request,[ 'id'=>'required', 'name'=>'required', 'grade'=>'required', 'year'=>'required', 'deleted'=>'required']);
+ 
+        cycle::find($id)->update($request->all());
+        return redirect()->route('cycle.index')->with('success','Registro actualizado correctamente');
     }
 
     /**
@@ -80,5 +89,7 @@ class CycleController extends Controller
     public function destroy($id)
     {
         //
+        cycle::find($id)->delete();
+        return redirect()->route('cycle.index')->with('success','Registro eliminado correctamente');
     }
 }
