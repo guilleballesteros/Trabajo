@@ -14,6 +14,8 @@ class EnterpriseController extends Controller
     public function index()
     {
         //
+        $Enterprises=enterprise::orderBy('id','DESC')->paginate(3);
+        return view('enterprise.index',compact('Enterprises'));
     }
 
     /**
@@ -24,6 +26,7 @@ class EnterpriseController extends Controller
     public function create()
     {
         //
+        return view('enterprise.create');
     }
 
     /**
@@ -46,6 +49,8 @@ class EnterpriseController extends Controller
     public function show($id)
     {
         //
+        $Enterprises=enterprise::find($id);
+        return  view('enterprise.show',compact('Enterprises'));
     }
 
     /**
@@ -80,5 +85,7 @@ class EnterpriseController extends Controller
     public function destroy($id)
     {
         //
+        enterprise::find($id)->delete();
+        return redirect()->route('enterprise.index')->with('success','Registro eliminado correctamente');
     }
 }
