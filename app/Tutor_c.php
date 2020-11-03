@@ -12,6 +12,6 @@ class Tutor_c extends Model
     ];
 
     public function tracing(){
-        return $this->hasMany(tracing::class);
+        return $this->hasMany(tracings::class);
     }
 }
