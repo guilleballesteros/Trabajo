@@ -20,7 +20,7 @@ class student extends Model
     public function belongs(){
         return $this->hasMany(belong::class);
     }
-    public function enterprices(){
-        return $this->hasManyThrough(enterprice::class,belong::class);
+    public function enterprises(){
+        return $this->hasManyThrough(enterprise::class,belong::class);
     }
 }
