@@ -11,7 +11,7 @@ class assistance extends Model
         'student_id', 'date', 'assistance','deleted'
     ];
 
-    public function students(){
-        return $this->hasMany(student::class);
+    public function student(){
+        return $this->belongsTo(student::class,'student_id');
     }
 }
