@@ -17,5 +17,7 @@ class enterprise extends Model
         return $this->belongsTo(Tutor_e::class,'entreprise_id');
     }
 
-       
+    public function visits(){
+        return $this->hasMany(visits::class);
+    }
 }

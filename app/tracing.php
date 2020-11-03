@@ -14,4 +14,8 @@ class tracing extends Model
     public function Tutor_c(){
         return $this->belongsTo(Tutor_c::class,'tutor_c_id');
     }
+
+    public function visits(){
+        return $this->hasMany(visits::class);
+    }
 }
