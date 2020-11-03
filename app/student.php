@@ -21,6 +21,6 @@ class student extends Model
         return $this->hasMany(belong::class);
     }
     public function enterprices(){
-        return $this->hasManyThrough(entreprice::class,belong::class);
+        return $this->hasManyThrough(enterprice::class,belong::class);
     }
 }

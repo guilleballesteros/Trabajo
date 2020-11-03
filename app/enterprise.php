@@ -11,6 +11,7 @@ class enterprise extends Model
 
     public function enterprises(){
         return $this->hasMany(belong::class);
-       }
+    }
+
        
 }
