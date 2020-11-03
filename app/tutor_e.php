@@ -11,5 +11,7 @@ class tutor_e extends Model
         'name', 'firstname','email','phone','entrerprise_id','deleted'
     ];
 
-    
+    public function enterprise(){
+        return $this->hasMany(enterprises::class);
+    }
 }
