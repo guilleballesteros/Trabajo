@@ -9,7 +9,7 @@ class enterprise extends Model
     protected $table='enterprises';
     protected $fillable = ['name', 'email','deleted'];
 
-    public function enterprises(){
+    public function belongs(){
         return $this->hasMany(belong::class);
     }
 

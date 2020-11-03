@@ -14,4 +14,8 @@ class Tutor_c extends Model
     public function tracing(){
         return $this->hasMany(tracings::class);
     }
+
+    public function cycle(){
+        return $this->belongsTo(cycle::class,'cycle_id');
+    }
 }

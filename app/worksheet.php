@@ -10,4 +10,9 @@ class worksheet extends Model
     protected $fillable = [
         'date','description','student_id','accepted','deleted'
     ];
+
+    public function student(){
+        return $this->belongsTo(student::class,'student_id');
+    }
+
 }
