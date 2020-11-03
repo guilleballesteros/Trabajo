@@ -14,4 +14,13 @@ class student extends Model
     public function assistances(){
         return $this->hasMany(assistance::class);
     }
+    public function tast_dones(){
+        return $this->hasMany(task_done::class);
+    }
+    public function belongs(){
+        return $this->hasMany(belong::class);
+    }
+    public function enterprices(){
+        return $this->hasManyThrough(entreprice::class,belong::class);
+    }
 }
