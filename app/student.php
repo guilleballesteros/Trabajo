@@ -11,5 +11,7 @@ class student extends Model
         'name', 'firstname','deleted'
     ];
     
-
+    public function assistance(){
+        return $this->belongsTo(assistance::class,)
+    }
 }
