@@ -7,6 +7,7 @@ $factory->define(App\assistance::class, function (Faker $faker) {
         'student_id'=> \app\student::all()->random()->id,
         'date' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'assistance'=> $faker->sentence,
+        'accepted'=>$faker->boolean,
         'deleted' => $faker->boolean
     ];
 });
