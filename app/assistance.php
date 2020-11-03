@@ -11,4 +11,7 @@ class assitance extends Model
         'student_id', 'date', 'assistance','deleted'
     ];
 
+    public function students(){
+        return $this->hasMany(student::class);
+    }
 }
