@@ -13,7 +13,7 @@ class CreateTaskDoneTable extends Migration
      */
     public function up()
     {
-        Schema::create('task_done', function (Blueprint $table) {
+        Schema::create('task_dones', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('student_id');

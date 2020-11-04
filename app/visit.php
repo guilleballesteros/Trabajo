@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class visit extends Model
 {
-    protected $table='ces';
+    protected $table='visits';
     protected $fillable=[
         'tracing_id','enterprise_id','date','kms','task_id','accepted','deleted'
     ];

@@ -9,7 +9,7 @@ $factory->define(App\tutor_e::class, function (Faker $faker) {
         'email' => $faker->safeEmail,
         'phone' => $faker->sentence,
         'enterprise_id' => \App\enterprise::all()->random()->id,
-        //deleted
+        'deleted'=> $faker->boolean
 
 
     ];

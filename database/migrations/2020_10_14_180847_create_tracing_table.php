@@ -13,7 +13,7 @@ class CreateTracingTable extends Migration
      */
     public function up()
     {
-        Schema::create('tracing', function (Blueprint $table) {
+        Schema::create('tracings', function (Blueprint $table) {
             $table->engine = "InnoDB";  
             $table->increments('id');   
             $table->string('type');
