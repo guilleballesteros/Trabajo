@@ -6,10 +6,10 @@ $factory->define(App\Tutor_c::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'firstname' => $faker->firstname,
-        'enmail' => $faker->safeEmail,
+        'email' => $faker->safeEmail,
         'phone' => $faker->sentence,
         'cycle_id' => \App\cycle::all()->random()->id,
-        //deleted
+        'deleted'=>$faker->boolean
 
 
 
