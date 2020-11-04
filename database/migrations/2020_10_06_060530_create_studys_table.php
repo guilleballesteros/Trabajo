@@ -13,7 +13,7 @@ class CreateStudysTable extends Migration
      */
     public function up()
     {
-        Schema::create('studys', function (Blueprint $table) {
+        Schema::create('studies', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedInteger('student_id');
