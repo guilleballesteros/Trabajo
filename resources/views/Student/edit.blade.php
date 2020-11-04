@@ -36,7 +36,7 @@
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="first name" id="first name" class="form-control input-sm" value="{{$libro->npagina}}">
+										<input type="text" name="first name" id="first name" class="form-control input-sm" value="{{$student->first name}}">
 									</div>
 								</div>
 							</div>
