@@ -7,7 +7,7 @@ $factory->define(App\tracing::class, function (Faker $faker) {
          'type'=>$faker->sentence,
          'reason'=>$faker->sentence,
          'observation'=>$faker->sentence,
-         'tutor_c_id'=>\app\Tutor_c::all()->random()->id,
+         'tutor_c_id'=>\app\user::all()->random()->id,
          'deleted'=>$faker->boolean
     ];
 });

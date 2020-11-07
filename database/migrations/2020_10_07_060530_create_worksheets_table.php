@@ -19,7 +19,7 @@ class CreateWorksheetsTable extends Migration
             $table->date('date');
             $table->string('description');
             $table->unsignedInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('students');
+            $table->foreign('student_id')->references('id')->on('users');
             $table->boolean('accepted');
             $table->boolean('deleted');
             $table->timestamps();

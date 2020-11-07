@@ -20,7 +20,7 @@ class CreateTracingTable extends Migration
             $table->string('reason');
             $table->string('observation');
             $table->unsignedInteger('tutor_c_id');
-            $table->foreign('tutor_c_id')->references('id')->on('tutor_cs');    
+            $table->foreign('tutor_c_id')->references('id')->on('users');    
             $table->boolean('deleted');
             $table->timestamps();
         });
