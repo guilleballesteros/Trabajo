@@ -13,7 +13,9 @@ class TutorCController extends Controller
      */
     public function index()
     {
-        //
+       //
+       $users=Tutor_c::orderBy('id','DESC')->paginate(3);
+       return view('Tutor_c.index',compact('users'));
     }
 
     /**
@@ -23,7 +25,8 @@ class TutorCController extends Controller
      */
     public function create()
     {
-        //
+       //
+       return view('Tutor_c.create');
     }
 
     /**
@@ -34,7 +37,11 @@ class TutorCController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         //
+         $this->validate($request,[ 'name'=>'required', 'first_name'=>'required', 'email'=>'required', 'phone'=>'required', 'cycle_id'=>'required', 'deleted'=>'required']);
+         Tutores_c::create($request->all());
+         return redirect()->route('users.index')->with('success','Registro creado satisfactoriamente');
+     
     }
 
     /**
@@ -45,7 +52,9 @@ class TutorCController extends Controller
      */
     public function show($id)
     {
-        //
+        $users=Tutores_c::find($id);
+        return  view('users.show',compact('users'));
+    
     }
 
     /**
@@ -56,7 +65,8 @@ class TutorCController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users=users::find($id);
+        return view('users.edit',compact('users'));
     }
 
     /**
@@ -68,7 +78,11 @@ class TutorCController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[ 'nombre'=>'required', 'resumen'=>'required', 'npagina'=>'required', 'edicion'=>'required', 'autor'=>'required', 'npagina'=>'required', 'precio'=>'required']);
+ 
+        users::find($id)->update($request->all());
+        return redirect()->route('users.index')->with('success','Registro actualizado satisfactoriamente');
+ 
     }
 
     /**
@@ -79,6 +93,8 @@ class TutorCController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Tutor_c::find($id)->delete();
+        return redirect()->route('users.index')->with('success','Registro eliminado satisfactoriamente');
+   
     }
 }
