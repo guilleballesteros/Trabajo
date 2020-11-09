@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::get('/admin', function (){
     return view('admin.dashboard');
 });
+Route::get('/registro', function (){
+    return view('auth.register');
+});
 
 Auth::routes();
 
