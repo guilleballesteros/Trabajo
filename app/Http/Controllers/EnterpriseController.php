@@ -38,6 +38,9 @@ class EnterpriseController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[ 'name'=>'required', 'email'=>'required', 'deleted'=>'required']);
+        enterprise::create($request->all());
+        return redirect()->route('enterprise.index')->with('success','Registro creado satisfactoriamente');
     }
 
     /**
@@ -74,6 +77,10 @@ class EnterpriseController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request,[ 'nombre'=>'required', 'email'=>'required', 'deleted'=>'required']);
+ 
+        libro::find($id)->update($request->all());
+        return redirect()->route('enterprise.index')->with('success','Registro actualizado satisfactoriamente');
     }
 
     /**

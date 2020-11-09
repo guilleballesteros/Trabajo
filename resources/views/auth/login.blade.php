@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,13 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../public/adminlte/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="../public/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../public/adminlte/css/adminlte.min.css">
+  <link rel="stylesheet" href="adminlte/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -30,7 +29,7 @@
       <p class="login-box-msg">Sign in to start your session</p>
 
       <form method="POST" action="{{ route('login') }}">
-      {{ csrf_field() }}
+        {{ csrf_field() }}
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
@@ -50,9 +49,8 @@
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
+              <label>
+                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
               </label>
             </div>
           </div>
@@ -79,7 +77,7 @@
         <a href="forgot-password.html">I forgot my password</a>
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
+        <a href="registro" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->
@@ -88,12 +86,11 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="../public/adminlte/plugins/jquery/jquery.min.js"></script>
+<script src="adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../public/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../public/adminlte/js/adminlte.min.js"></script>
+<script src="adminlte/js/adminlte.min.js"></script>
 
 </body>
 </html>
-
