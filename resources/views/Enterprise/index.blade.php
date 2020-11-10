@@ -1,53 +1,87 @@
-@extends('layouts.layout')
+@extends('admin.layout')
 @section('content')
-<div class="row">
-  <section class="content">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="pull-left"><h3>Lista de empresas</h3></div>
-          <div class="pull-right">
-            <div class="btn-group">
-              <a href="{{ route('enterprise.create') }}" class="btn btn-info" >Añadir estudiante</a>
-            </div>
-          </div>
-          <div class="table-container">
-            <table id="mytable" class="table table-bordred table-striped">
-             <thead>
-               <th>Nombre</th>
-               <th>email</th>
-               <th>deleted</th>
-             </thead>
-             <tbody>
-              @if($enterprises->count())  
-              @foreach($enterprises as $enterprise) 
-              <tr>
-                <td>{{$enterprise->name}}</td>
-                <td>{{$enterprise->email}}</td>
-                <td>{{$enterprise->deleted}}</td>
-                <td><a class="btn btn-primary btn-xs" href="{{action('StudentController@edit', $enterprise->name)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
-                <td>
-                  <form action="{{action('StudentController@destroy', $enterprise->name)}}" method="post">
-                   {{csrf_field()}}
-                   <input name="_method" type="hidden" value="DELETE">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Usuarios</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-                   <button class="btn btn-danger btn-xs" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
-                 </td>
-               </tr>
-               @endforeach 
-               @else
-               <tr>
-                <td colspan="8">No hay registro !!</td>
-              </tr>
-              @endif
-            </tbody>
-
-          </table>
-        </div>
-      </div>
-      {{ $students->links() }}
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="adminlte/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+  <!-- /.card-header -->
+  <div class="row"><div class="col-sm-12">
+      <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+        <thead>
+          <tr role="row">
+            <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Nombre: activate to sort column ascending" aria-sort="descending">Nombre</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="name: activate to sort column ascending">Name</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="first name: activate to sort column ascending">First name</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @forelse($enterprises as $enterprise)
+          <tr role="row" class="odd">
+              <td class="sorting_1" tabindex="0">{{ $enterprise->name }}</td>
+              <td>{{ $enterprise->firstname }}</td>
+          </tr>
+          @empty
+              <div class="alert alert-danger">
+                  {{ __("No hay ningún Usuario en este momento") }}
+              </div>
+          @endforelse
+        </tbody>
+        <tfoot>
+          <tr>
+            <th rowspan="1" colspan="1">Name</th>
+            <th rowspan="1" colspan="1">First name</th>
+          </tr>
+        </tfoot>
+      </table>
     </div>
-  </div>
-</section>
-
+            <!-- jQuery -->
+  <script src="adminlte/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- DataTables -->
+  <script src="adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="adminlte/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="adminlte/js/demo.js"></script>
+  <!-- page script -->
+  <script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true,
+        "autoWidth": false,
+      });
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+  </script>
+</body>
 @endsection
