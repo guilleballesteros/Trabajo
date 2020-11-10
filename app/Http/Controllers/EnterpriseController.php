@@ -14,8 +14,8 @@ class EnterpriseController extends Controller
     public function index()
     {
         //
-        $Enterprises=enterprise::orderBy('id','DESC')->paginate(3);
-        return view('enterprise.index',compact('Enterprises'));
+        $Eterprises = enterprise::all();
+        return view('enterprises.index',compact('enterprises'));
     }
 
     /**
