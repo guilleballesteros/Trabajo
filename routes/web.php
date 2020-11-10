@@ -21,6 +21,7 @@ Route::get('/admin', function (){
 Route::get('/registro', function (){
     return view('auth.register');
 });
+Route::get('/usuarios','UserController@index');
 
 Auth::routes();
 
