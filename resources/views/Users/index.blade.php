@@ -34,7 +34,6 @@
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Tipo: activate to sort column ascending">Tipo</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Id de la empresa: activate to sort column ascending">Id de la empresa</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Id del ciclo: activate to sort column ascending">Id del ciclo</th>
-            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -65,12 +64,15 @@
             <th rowspan="1" colspan="1">Tipo</th>
             <th rowspan="1" colspan="1">Id de la empresa</th>
             <th rowspan="1" colspan="1">Id del ciclo</th>
-            <th rowspan="1" colspan="1">Acciones</th>
           </tr>
         </tfoot>
       </table>
     </div>
-            <!-- jQuery -->
+
+    <div class="card-footer">
+      <a href="añadirUsuario" class="btn btn-primary">Añadir usuario</a>
+    </div>
+  <!-- jQuery -->
   <script src="adminlte/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

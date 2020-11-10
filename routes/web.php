@@ -22,6 +22,7 @@ Route::get('/registro', function (){
     return view('auth.register');
 });
 Route::get('/usuarios','UserController@index');
+Route::get('/añadirUsuario','UserController');
 
 Auth::routes();
 

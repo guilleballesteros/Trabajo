@@ -145,8 +145,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="float-right d-none d-sm-inline">
       Anything you want
     </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
@@ -159,5 +157,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="adminlte/js/adminlte.min.js"></script>
+
 </body>
 </html>
