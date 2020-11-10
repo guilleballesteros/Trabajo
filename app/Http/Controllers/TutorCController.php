@@ -78,7 +78,7 @@ class TutorCController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[ 'nombre'=>'required', 'resumen'=>'required', 'npagina'=>'required', 'edicion'=>'required', 'autor'=>'required', 'npagina'=>'required', 'precio'=>'required']);
+        $this->validate($request,['name'=>'required', 'first_name'=>'required', 'email'=>'required', 'phone'=>'required', 'cycle_id'=>'required', 'deleted'=>'required']);
  
         users::find($id)->update($request->all());
         return redirect()->route('users.index')->with('success','Registro actualizado satisfactoriamente');
