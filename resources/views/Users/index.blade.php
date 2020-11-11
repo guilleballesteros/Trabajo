@@ -34,6 +34,7 @@
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Tipo: activate to sort column ascending">Tipo</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Id de la empresa: activate to sort column ascending">Id de la empresa</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Id del ciclo: activate to sort column ascending">Id del ciclo</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -47,6 +48,10 @@
               <td>{{ $user->type }}</td>
               <td>{{ $user->enterprise_id }}</td>
               <td>{{ $user->cycle_id }}</td>
+              <td>
+                <a class="btn btn-secundary" href="modUser/{{user->id}}">Modificar</a>
+                <a class="btn btn-secundary" href="delUser/{{user->id}}">Eliminar</a>
+              </td>
           </tr>
           @empty
               <div class="alert alert-danger">
@@ -64,6 +69,7 @@
             <th rowspan="1" colspan="1">Tipo</th>
             <th rowspan="1" colspan="1">Id de la empresa</th>
             <th rowspan="1" colspan="1">Id del ciclo</th>
+            <th rowspan="1" colspan="1">Acciones</th>
           </tr>
         </tfoot>
       </table>

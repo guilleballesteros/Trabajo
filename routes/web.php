@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('users', 'TutorCController');
+// Route::resource('users', 'TutorCController');
 Route::get('/', function () {
     // return view('welcome');
     return view('auth.login');
@@ -22,7 +22,9 @@ Route::get('/registro', function (){
     return view('auth.register');
 });
 Route::get('/usuarios','UserController@index');
-Route::get('/añadirUsuario','UserController');
+Route::get('/añadirUsuario',function(){
+    return view('Users.create');
+});
 
 Auth::routes();
 
