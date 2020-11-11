@@ -5,37 +5,35 @@
     <div class="col-md-8 col-md-offset-2">
       <div class="panel panel-default">
         <div class="panel-body">
-          <div class="pull-left"><h3>Lista Libros</h3></div>
+          <div class="pull-left"><h3>Lista tutores</h3></div>
           <div class="pull-right">
             <div class="btn-group">
-              <a href="{{ route('libro.create') }}" class="btn btn-info" >Añadir Libro</a>
+              <a href="{{ route('users.create') }}" class="btn btn-info" >Añadir tutor</a>
             </div>
           </div>
           <div class="table-container">
             <table id="mytable" class="table table-bordred table-striped">
              <thead>
-               <th>Nombre</th>
-               <th>Resumen</th>
-               <th>No. Páginas</th>
-               <th>Edicion</th>
-               <th>Autor</th>
-               <th>Precio</th>
-               <th>Editar</th>
-               <th>Eliminar</th>
+               <th>Name</th>
+               <th>Firstname</th>
+               <th>Email</th>
+               <th>Phone</th>
+               <th>IdCycle</th>
+               <th>Deleted</th>
              </thead>
              <tbody>
-              @if($libros->count())  
-              @foreach($libros as $libro)  
+              @if($users->count())  
+              @foreach($users as $users)  
               <tr>
-                <td>{{$libro->nombre}}</td>
-                <td>{{$libro->resumen}}</td>
-                <td>{{$libro->npagina}}</td>
-                <td>{{$libro->edicion}}</td>
-                <td>{{$libro->autor}}</td>
-                <td>{{$libro->precio}}</td>
-                <td><a class="btn btn-primary btn-xs" href="{{action('LibroController@edit', $libro->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td>{{$users->name}}</td>
+                <td>{{$users->firstname}}</td>
+                <td>{{$users->email}}</td>
+                <td>{{$users->phone}}</td>
+                <td>{{$users->cycle_id}}</td>
+                <td>{{$users->delete}}</td>
+                <td><a class="btn btn-primary btn-xs" href="{{action('TutorCController@edit', $users->id)}}" ><span class="glyphicon glyphicon-pencil"></span></a></td>
                 <td>
-                  <form action="{{action('LibroController@destroy', $libro->id)}}" method="post">
+                  <form action="{{action('TutorCController@destroy', $users->id)}}" method="post">
                    {{csrf_field()}}
                    <input name="_method" type="hidden" value="DELETE">
 
