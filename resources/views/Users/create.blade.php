@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends('admin.layout')
 @section('content')
 <!DOCTYPE html>
 <html>
@@ -44,6 +44,7 @@
 				</div>
 				<div class="panel-body">					
 					<div class="table-container">
+					<div class="card-primary">
 						<form method="POST" action="insertUsers"  role="form">
 							<div class="card-body">
 							<div class="form-group">
@@ -88,6 +89,7 @@
 							<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
               			</form>
+						</div>
 					</div>
 				</div>
 			</div>

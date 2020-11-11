@@ -48,6 +48,10 @@
               <td>{{ $user->type }}</td>
               <td>{{ $user->enterprise_id }}</td>
               <td>{{ $user->cycle_id }}</td>
+              <td>
+                <a class="btn btn-secundary" href="modUser/{{user->id}}">Modificar</a>
+                <a class="btn btn-secundary" href="delUser/{{user->id}}">Eliminar</a>
+              </td>
           </tr>
           @empty
               <div class="alert alert-danger">
@@ -70,7 +74,11 @@
         </tfoot>
       </table>
     </div>
-            <!-- jQuery -->
+
+    <div class="card-footer">
+      <a href="añadirUsuario" class="btn btn-primary">Añadir usuario</a>
+    </div>
+  <!-- jQuery -->
   <script src="adminlte/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
