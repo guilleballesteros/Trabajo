@@ -49,8 +49,8 @@
               <td>{{ $user->enterprise_id }}</td>
               <td>{{ $user->cycle_id }}</td>
               <td>
-                <a class="btn btn-secundary" href="modUser/{{user->id}}">Modificar</a>
-                <a class="btn btn-secundary" href="delUser/{{user->id}}">Eliminar</a>
+                <a class="btn btn-primary" href="modUser/{{ $user->id }}">Modificar</a>
+                <a class="btn btn-primary" href="delUser/{{ $user->id }}">Eliminar</a>
               </td>
           </tr>
           @empty
