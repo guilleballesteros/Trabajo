@@ -52,7 +52,7 @@
 								<input type="name" class="form-control" id="name" placeholder="Enter name">
 							</div>
 							<div class="form-group">
-								<label for="first name">Email</label>
+								<label for="first name">First name</label>
 								<input type="first name" class="form-control" id="first name" placeholder="Enter first name">
 							</div>
 							<div class="form-group">
