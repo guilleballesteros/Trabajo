@@ -123,7 +123,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Main content -->
    <section class="content">
-        @yield('content')
+      @if(session('message')) 
+        <div class="alert alert-{{ session('message')[0] }}"> 
+          {{ session('message')[1] }} 
+        </div>
+      @endif
+      @yield('content')
    </section>
     <!-- /.content -->
   </div>

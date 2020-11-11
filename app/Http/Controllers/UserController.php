@@ -34,12 +34,18 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-   public function store(Request $request)
+   public function store()
     {
-         //
-         $this->validate($request,[ 'name'=>'required', 'first_name'=>'required', 'email'=>'required', 'phone'=>'required', 'cycle_id'=>'required', ]);
-         Tutores_c::create($request->all());
-         return redirect()->route('usuarios')->with('success','Registro creado satisfactoriamente');
+        $this->validate(request(),[ 
+             'name'=>'required',
+             'firstname'=>'required', 
+             'email'=>'required', 
+             'phone'=>'required', 
+             'cycle_id'=>'required',
+             'enterprise_id'=>'required'
+        ]);
+        User::create(request()->all());
+        return back()->with('message', ['success', __("Usuario creado correctamente")]);
      
     }
 

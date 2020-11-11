@@ -45,27 +45,28 @@
 				<div class="panel-body">					
 					<div class="table-container">
 					<div class="card-primary">
-						<form method="POST" action="insertUsers"  role="form">
+						<form method="POST" action="user"  role="form">
+						{{ csrf_field() }}
 							<div class="card-body">
 							<div class="form-group">
 								<label for="name">Name</label>
-								<input type="name" class="form-control" id="name" placeholder="Enter name">
+								<input name="name"type="name" class="form-control" id="name" placeholder="Enter name">
 							</div>
 							<div class="form-group">
-								<label for="first name">First name</label>
-								<input type="first name" class="form-control" id="first name" placeholder="Enter first name">
+								<label for="firstname">First name</label>
+								<input name="firstname" type="firstname" class="form-control" id="firstname" placeholder="Enter first name">
 							</div>
 							<div class="form-group">
 								<label for="phone">Phone</label>
-								<input type="phone" class="form-control" id="phone" placeholder="Enter phone">
+								<input name="phone" type="phone" class="form-control" id="phone" placeholder="Enter phone">
 							</div>
 							<div class="form-group">
 								<label for="email">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Enter email">
+								<input name="email" type="email" class="form-control" id="email" placeholder="Enter email">
 							</div>
 							<div class="form-group">
 								<label for="password">Password</label>
-								<input type="password" class="form-control" id="password" placeholder="Enter password">
+								<input name="password" type="password" class="form-control" id="password" placeholder="Enter password">
 							</div>
 							<div class="form-group">
 								<label for="type">Type</label>
@@ -79,11 +80,11 @@
 							</div>
 							<div class="form-group">
 								<label for="enterpise_id">Enterprise id</label>
-								<input type="enterprise_id" class="form-control" id="enterprise_id" placeholder="Enter enterprise id">
+								<input name="enterprise_id"type="enterprise_id" class="form-control" id="enterprise_id" placeholder="Enter enterprise id">
 							</div>
 							<div class="form-group">
 								<label for="cycle_id">Cycle id</label>
-								<input type="cycle_id" class="form-control" id="cycle_id" placeholder="Enter cycle id">
+								<input name="cycle_id" type="cycle_id" class="form-control" id="cycle_id" placeholder="Enter cycle id">
 							</div>
 							<!-- /.card-body -->
 
