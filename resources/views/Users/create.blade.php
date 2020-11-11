@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="row">
+<div class="wrapper">
 	<section class="content">
 		<div class="col-md-8 col-md-offset-2">
 			@if (count($errors) > 0)
@@ -64,23 +64,25 @@
 								<input type="email" class="form-control" id="email" placeholder="Enter email">
 							</div>
 							<div class="form-group">
-								<label for="email_verified_at">Confirmed Email</label>
-								<input type="email_verified_at" class="form-control" id="email_verified_at" placeholder="Enter email">
-							</div>
-							<div class="form-group">
 								<label for="password">Password</label>
 								<input type="password" class="form-control" id="password" placeholder="Enter password">
 							</div>
 							<div class="form-group">
 								<label for="type">Type</label>
-								<input type="type" class="form-control" id="type" placeholder="Enter type">
+								<div class="form-group">
+								<select class="form-control select2" style="width: 100%;">
+									<option selected="selected" value="al">Alumno</option>
+									<option value="te">Tutor laboral</option>
+									<option value="tc">Tutor colegio</option>
+								</select>
+								</div>
 							</div>
 							<div class="form-group">
-								<label for="enterpise_id">Email</label>
+								<label for="enterpise_id">Enterprise id</label>
 								<input type="enterprise_id" class="form-control" id="enterprise_id" placeholder="Enter enterprise id">
 							</div>
 							<div class="form-group">
-								<label for="cycle_id">Email</label>
+								<label for="cycle_id">Cycle id</label>
 								<input type="cycle_id" class="form-control" id="cycle_id" placeholder="Enter cycle id">
 							</div>
 							<!-- /.card-body -->
