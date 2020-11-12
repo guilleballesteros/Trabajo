@@ -83,6 +83,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Usuarios
               </p>
             </a>
+            <a href="eterprises" class="nav-link active">
+              <i class="nav-icon fas "></i>
+              <p>
+                Enterprises
+              </p>
+            </a>
+            <a href="cycles" class="nav-link active">
+              <i class="nav-icon fas "></i>
+              <p>
+                Cycles
+              </p>
+            </a>
             
           </li>
           <li class="nav-item">
