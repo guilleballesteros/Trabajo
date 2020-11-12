@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ModuleController extends Controller
 {
-      /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -14,8 +14,7 @@ class ModuleController extends Controller
     public function index()
     {
        //
-       $module=module::orderBy('id','DESC')->paginate(3);
-       return view('module.index',compact('module'));
+       return view('module.create');
     }
 
     /**

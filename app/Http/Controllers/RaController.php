@@ -53,8 +53,7 @@ class RaController extends Controller
      */
     public function show($id)
     {
-        $ra=ra::find($id);
-        return  view('ra.show',compact('ra'));
+        return view('ra.create');
     
     }
 
