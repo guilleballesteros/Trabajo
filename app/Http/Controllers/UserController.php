@@ -39,7 +39,8 @@ class UserController extends Controller
         $this->validate(request(),[ 
              'name'=>'required',
              'firstname'=>'required', 
-             'email'=>'required', 
+             'email'=>'required',
+             'password'=>'required', 
              'phone'=>'required', 
              'cycle_id'=>'required',
              'enterprise_id'=>'required'
@@ -55,9 +56,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(User $user)
+    {   
+        return view('Users.update',compact('user'));
     }
 
     /**
@@ -80,7 +81,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate(request(),[ 
+            'name'=>'required',
+            'firstname'=>'required', 
+            'email'=>'required', 
+            'phone'=>'required', 
+            'cycle_id'=>'required',
+            'enterprise_id'=>'required'
+       ]);
+       User:: find($id)->update(request()->all());
+       return back()->with('message', ['success', __("Usuario creado correctamente")]);
     }
 
     /**
