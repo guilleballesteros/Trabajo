@@ -40,51 +40,21 @@
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Creating a new user</h3>
+					<h3 class="panel-title">Creating a new task</h3>
 				</div>
 				<div class="panel-body">					
 					<div class="table-container">
 					<div class="card-primary">
-						<form method="POST" action="user"  role="form">
+						<form method="POST" action="task"  role="form">
 						{{ csrf_field() }}
 							<div class="card-body">
 							<div class="form-group">
-								<label for="name">Name</label>
-								<input name="name"type="name" class="form-control" id="name" placeholder="Enter name">
+								<label for="number">Number</label>
+								<input name="number"type="number" class="form-control" id="number" placeholder="Enter number">
 							</div>
 							<div class="form-group">
-								<label for="firstname">First name</label>
-								<input name="firstname" type="firstname" class="form-control" id="firstname" placeholder="Enter first name">
-							</div>
-							<div class="form-group">
-								<label for="phone">Phone</label>
-								<input name="phone" type="phone" class="form-control" id="phone" placeholder="Enter phone">
-							</div>
-							<div class="form-group">
-								<label for="email">Email</label>
-								<input name="email" type="email" class="form-control" id="email" placeholder="Enter email">
-							</div>
-							<div class="form-group">
-								<label for="password">Password</label>
-								<input name="password" type="password" class="form-control" id="password" placeholder="Enter password">
-							</div>
-							<div class="form-group">
-								<label for="type">Type</label>
-								<div class="form-group">
-								<select class="form-control select2" style="width: 100%;">
-									<option selected="selected" value="al">Alumno</option>
-									<option value="te">Tutor laboral</option>
-									<option value="tc">Tutor colegio</option>
-								</select>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="enterpise_id">Enterprise id</label>
-								<input name="enterprise_id"type="enterprise_id" class="form-control" id="enterprise_id" placeholder="Enter enterprise id">
-							</div>
-							<div class="form-group">
-								<label for="cycle_id">Cycle id</label>
-								<input name="cycle_id" type="cycle_id" class="form-control" id="cycle_id" placeholder="Enter cycle id">
+								<label for="description">Description</label>
+								<input name="description" type="description" class="form-control" id="description" placeholder="Enter first name">
 							</div>
 							<!-- /.card-body -->
 
