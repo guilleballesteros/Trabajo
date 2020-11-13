@@ -27,8 +27,9 @@
 			    	<div class="panel-body">					
     					<div class="table-container">
 	        				<div class="card-primary">
-			    			<form method="POST" action="user"  role="form">
+			    			<form method="POST" action="{{ route('User.update',$user->id) }}"  role="form">
 				    		{{ csrf_field() }}
+								<input name="_method" type="hidden" value="PATCH">
 					    		<div class="card-body">
     						    	<div class="form-group">
 	    							<label for="name">Name</label>
@@ -46,10 +47,6 @@
 						    		<label for="email">Email</label>
 							    	<input name="email" type="email" class="form-control" id="email" placeholder="Enter email" value="{{ $user->email }}">
     							</div>
-	    						<div class="form-group">
-		    						<label for="password">Password</label>
-			    					<input name="password" type="password" class="form-control" id="password" placeholder="Enter password" value="{{ $user->password }}">
-				    			</div>
 					    		<div class="form-group">
 						    		<label for="type">Type</label>
 							    	<div class="form-group">

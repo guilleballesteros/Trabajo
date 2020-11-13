@@ -26,8 +26,10 @@ Route::get('/añadirUsuario',function(){
     return view('Users.create');
 });
 Route::post('/user','UserController@store');
+Route::post('/userU','UserController@update');
 Route::get('/modUser/{user}','UserController@show');
 Auth::routes();
+Route::resource('User','UserController');
 
 
 
