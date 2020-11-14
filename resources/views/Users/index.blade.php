@@ -18,7 +18,8 @@
         </thead>
         <tbody>
           @forelse($users as $user)
-          <tr role="row" class="odd">
+            @if( ($user->deleted) ==0)
+            <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $user->name }}</td>
               <td>{{ $user->firstname }}</td>
               <td>{{ $user->phone }}</td>
@@ -29,9 +30,14 @@
               <td>{{ $user->cycle_id }}</td>
               <td>
                 <a class="btn btn-primary" href="modUser/{{ $user->id }}">Modificar</a>
-                <a class="btn btn-primary" href="delUser/{{ $user->id }}">Eliminar</a>
+                <form method="POST" action="DelUser/{{ $user->id }}">
+                {{ method_field('DELETE') }} 
+                {{ csrf_field() }} 
+                  <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                </form>
               </td>
-          </tr>
+           </tr>
+           @endif
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ningún Usuario en este momento") }}

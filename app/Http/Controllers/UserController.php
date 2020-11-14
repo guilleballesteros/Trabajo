@@ -101,6 +101,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        User::find($id)->update([
+            'deleted'=> '1'
+        ]);
+        return back()->with('message', ['success', __("Usuario eliminado correctamente")]);
     }
 }
