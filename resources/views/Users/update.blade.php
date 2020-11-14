@@ -50,7 +50,7 @@
 					    		<div class="form-group">
 						    		<label for="type">Type</label>
 							    	<div class="form-group">
-    								<select class="form-control select2" style="width: 100%;">
+    								<select name="type" class="form-control select2" style="width: 100%;">
 	    								<option selected="selected" value="al">Alumno</option>
 		    							<option value="te">Tutor laboral</option>
 			    						<option value="tc">Tutor colegio</option>
