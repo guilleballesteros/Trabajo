@@ -31,5 +31,4 @@ Route::get('/modUser/{user}','UserController@show');
 Auth::routes();
 Route::resource('User','UserController');
 
-
-
+Route::resource('enterprise', 'EnterpriseController');
