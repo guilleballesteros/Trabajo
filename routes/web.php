@@ -32,4 +32,4 @@ Route::Delete('DelUser/{user}','UserController@destroy');
 Auth::routes();
 Route::resource('User','UserController');
 
-Route::resource('enterprise', 'EnterpriseController');
+Route::get('/enterprises', 'EnterpriseController@index');

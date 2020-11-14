@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\enterprise;
 
 class EnterpriseController extends Controller
 {
@@ -14,8 +15,8 @@ class EnterpriseController extends Controller
     public function index()
     {
         //
-        $Eterprises = enterprise::all();
-        return view('enterprises.index',compact('enterprises'));
+        $enterprises = enterprise::all();
+        return view('Enterprise.index',compact('enterprises'));
     }
 
     /**
