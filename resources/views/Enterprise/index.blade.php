@@ -14,6 +14,14 @@
           <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $enterprise->name }}</td>
               <td>{{ $enterprise->email }}</td>
+              <td>
+                <a class="btn btn-primary" href="modUser/{{ $user->id }}">Modificar</a>
+                <form method="POST" action="DelUser/{{ $user->id }}">
+                {{ method_field('DELETE') }}
+                {{ csrf_field() }} 
+                  <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                </form>
+              </td>
           </tr>
           @empty
               <div class="alert alert-danger">
