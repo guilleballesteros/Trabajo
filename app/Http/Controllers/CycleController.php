@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\cycle;
 
 class CycleController extends Controller
 {
@@ -15,7 +16,7 @@ class CycleController extends Controller
     {
         //
         $Cycles=cycle::orderBy('id','DESC')->paginate(3);
-        return view('cycle.index',compact('Cycles')); 
+        return view('cycle.index',compact('Cycles'));
     }
 
     /**
