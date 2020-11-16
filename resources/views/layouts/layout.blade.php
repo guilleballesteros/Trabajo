@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini sidebar-collapse">
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -82,24 +82,53 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="{{ route('User.index') }}" class="nav-link active">
-              <i class="nav-icon fas "></i>
+            <i class="far fa-circle nav-icon"></i>
               <p>
                 Usuarios
               </p>
             </a>
-            <a href="{{ route('enterprise.index') }}" class="nav-link active">
-              <i class="nav-icon fas "></i>
-              <p>
-                Enterprises
-              </p>
-            </a>
+            
+            
             <a href="cycles" class="nav-link active">
-              <i class="nav-icon fas "></i>
+            <i class="far fa-circle nav-icon"></i>
               <p>
                 Cycles
               </p>
             </a>
             
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-city"></i>
+              <p>
+                Enterprises
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('enterprise.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                  Show
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('belong.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Belongs
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../charts/inline.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inline</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">

@@ -13,8 +13,8 @@ class BelongController extends Controller
      */
     public function index()
     {
-        $belong=belong::all();
-        return view('')
+        $belongs=belong::all();
+        return view('Belongs.index',compact('belongs'));
     }
 
     /**

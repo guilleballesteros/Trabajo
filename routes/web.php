@@ -26,6 +26,7 @@ Auth::routes();
 Route::resource('User','UserController');
 
 Route::resource('enterprise','EnterpriseController');
+Route::resource('belong','BelongController');
 Route::get('/cycles','CycleController@index');
 //Route::get('/modenterprise/{enterprise}','EnterpriseController@show');
 //Route::Delete('Delenterprise/{enterprise}','EnterpriseController@destroy');
