@@ -17,8 +17,8 @@
               <td class="sorting_1" tabindex="0">{{ $task->number }}</td>
               <td>{{ $task->description }}</td>
               <td>
-                <a class="btn btn-primary" href="modTask/{{ $task->id }}">Modificar</a>
-                <form method="POST" action="DelTask/{{ $task->id }}">
+                <a class="btn btn-primary" href="{{ route('task.edit',$task->id) }}">Modificar</a>
+                <form method="POST" action="{{ route('task.destroy',$task->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
                   <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
