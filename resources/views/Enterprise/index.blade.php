@@ -39,7 +39,7 @@
     </div>
 
     <div class="card-footer">
-      <a href="añadirempresa" class="btn btn-primary">Add enterprise</a>
+      <a href="{{ route('enterprise.create') }}" class="btn btn-primary">Add enterprise</a>
     </div>
 
 @endsection

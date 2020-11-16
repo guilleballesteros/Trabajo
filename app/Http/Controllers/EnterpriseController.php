@@ -35,12 +35,12 @@ class EnterpriseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
-        $this->validate($request,[ 'name'=>'required', 'email'=>'required']);
-        enterprise::create($request->all());
-        return redirect()->route('enterprise.index')->with('success','Registro creado satisfactoriamente');
+        $this->validate(request(),['name'=>'required', 'email'=>'required']);
+        enterprise::create(request()->all());
+        return redirect()->route('enterprise.index')->with('message',['success','Registro creado satisfactoriamente']);
     }
 
     /**
@@ -80,7 +80,7 @@ class EnterpriseController extends Controller
         $this->validate($request,[ 'name'=>'required', 'email'=>'required']);
  
         enterprise:: find($id)->update(request()->all());
-        return back()->with('message', ['success', __("Usuario modificado correctamente")]);
+        return redirect()->route('enterprise.index')->with('message',['success','Registro modificado satisfactoriamente']);
     }
 
     /**
@@ -93,6 +93,6 @@ class EnterpriseController extends Controller
     {
         //
         enterprise::find($id)->delete();
-        return redirect()->route('enterprise.index')->with('success','Registro eliminado correctamente');
+        return back()->with('message', ['success', __("Usuario modificado correctamente")]);
     }
 }
