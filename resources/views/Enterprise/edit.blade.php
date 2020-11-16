@@ -1,6 +1,6 @@
-@extends('layouts.layout')
+@extends('admin.layout')
 @section('content')
-<div class="row">
+<div class="wrapper">
 	<section class="content">
 		<div class="col-md-8 col-md-offset-2">
 			@if (count($errors) > 0)
@@ -21,38 +21,31 @@
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Nueva empresa</h3>
+					<h3 class="panel-title">New enterprise</h3>
 				</div>
 				<div class="panel-body">					
 					<div class="table-container">
 						<form method="POST" action="{{ route('enterprise.update',$enterprise->id) }}"  role="form">
-							{{ csrf_field() }}
-							<input name="_method" type="hidden" value="PATCH">
-							<div class="row">
-								<div class="col-xs-6 col-sm-6 col-md-6">
-									<div class="form-group">
-										<input type="text" name="name" id="name" class="form-control input-sm" value="{{$enterprise->name}}">
-									</div>
-								</div>
-								<div class="col-xs-6 col-sm-6 col-md-6">
-									<div class="form-group">
-										<input type="text" name="email" id="email" class="form-control input-sm" value="{{$enterprise->first name}}">
-									</div>
-								</div>
+						{{ csrf_field() }}
+							<div class="card-body">
+							<div class="form-group">
+								<label for="name">Name</label>
+								<input type="name" class="form-control" id="name" placeholder="Enter name" value="{{$enterprise->name}}">
 							</div>
-							<div class="row">
-
-								<div class="col-xs-12 col-sm-12 col-md-12">
-									<input type="submit"  value="Actualizar" class="btn btn-success btn-block">
-									<a href="{{ route('enterprise.index') }}" class="btn btn-info btn-block" >Atrás</a>
-								</div>	
-
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="email" class="form-control" id="email" placeholder="Enter email" value="{{$enterprise->email}}">
 							</div>
-						</form>
+							<!-- /.card-body -->
+
+							<div class="card-footer">
+							<button type="submit" class="btn btn-primary">Submit</button>
+							</div>
+              			</form>
 					</div>
 				</div>
 
 			</div>
 		</div>
 	</section>
-	@endsection
+@endsection
