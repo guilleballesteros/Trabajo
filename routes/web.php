@@ -15,8 +15,8 @@ Route::get('/', function () {
     // return view('welcome');
     return view('auth.login');
 });
-Route::get('/admin', function (){
-    return view('admin.dashboard');
+Route::get('/inicio', function (){
+    return view('inicio.dashboard');
 });
 Route::get('/registro', function (){
     return view('auth.register');

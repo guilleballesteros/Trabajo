@@ -53,7 +53,7 @@ class CeController extends Controller
          */
         public function show($id)
         {
-            return view('ce.create');
+            //
         
         }
     
@@ -78,7 +78,7 @@ class CeController extends Controller
          */
         public function update(Request $request, $id)
         {
-            $this->validate($request,['word'=>'required', 'description'=>'required', 'ra_id'=>'required', 'task_id'=>'required', 'mark'=>'required', 'deleted'=>'required']);     
+            $this->validate($request,['word'=>'required', 'description'=>'required', 'ra_id'=>'required', 'task_id'=>'required', 'mark'=>'required']);     
             ce::find($id)->update($request->all());
             return redirect()->route('ce.index')->with('success','Registro actualizado satisfactoriamente');
      
