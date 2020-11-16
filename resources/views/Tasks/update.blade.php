@@ -31,40 +31,14 @@
 				    		{{ csrf_field() }}
 								<input name="_method" type="hidden" value="PATCH">
 					    		<div class="card-body">
-    						    	<div class="form-group">
-	    							<label for="name">Name</label>
-		    						<input name="name"type="name" class="form-control" id="name" placeholder="Enter name" value="{{ $user->name }}">
-			    				</div>
-				    			<div class="form-group">
-					    			<label for="firstname">First name</label>
-						    		<input name="firstname" type="firstname" class="form-control" id="firstname" placeholder="Enter first name" value="{{ $user->firstname }}">
-    							</div>
-	    						<div class="form-group">
-		    						<label for="phone">Phone</label>
-			    					<input name="phone" type="phone" class="form-control" id="phone" placeholder="Enter phone" value="{{ $user->phone }}">
-				    			</div>
-					    		<div class="form-group">
-						    		<label for="email">Email</label>
-							    	<input name="email" type="email" class="form-control" id="email" placeholder="Enter email" value="{{ $user->email }}">
-    							</div>
-					    		<div class="form-group">
-						    		<label for="type">Type</label>
-							    	<div class="form-group">
-    								<select name="type" class="form-control select2" style="width: 100%;">
-	    								<option selected="selected" value="al">Alumno</option>
-		    							<option value="te">Tutor laboral</option>
-			    						<option value="tc">Tutor colegio</option>
-				    				</select>
-					    			</div>
-						    	</div>
-							    <div class="form-group">
-    								<label for="enterpise_id">Enterprise id</label>
-	    							<input name="enterprise_id"type="enterprise_id" class="form-control" id="enterprise_id" placeholder="Enter enterprise id" value="{{ $user->enterprise_id }}">
-		    					</div>
-			    				<div class="form-group">
-				    				<label for="cycle_id">Cycle id</label>
-					    			<input name="cycle_id" type="cycle_id" class="form-control" id="cycle_id" placeholder="Enter cycle id" value="{{ $user->cycle_id }}">
-						    	</div>
+							<div class="form-group">
+								<label for="number">Number</label>
+								<input name="number"type="number" class="form-control" id="number" placeholder="Enter number">
+							</div>
+							<div class="form-group">
+								<label for="description">Description</label>
+								<input name="description" type="description" class="form-control" id="description" placeholder="Enter description">
+							</div>
 							    <!-- /.card-body -->
 
 	    						<div class="card-footer">
