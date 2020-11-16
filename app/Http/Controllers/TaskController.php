@@ -52,8 +52,8 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        $task=task::find($id);
-        return  view('task.show',compact('task'));
+        //$task=task::find($id);
+        //return  view('task.show',compact('task'));
     
     }
 
@@ -93,8 +93,10 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        task::find($id)->delete();
-        return redirect()->route('task.index')->with('success','Registro eliminado satisfactoriamente');
+        task::find($id)->update([
+            'deleted'=> '1'
+        ]);
+        return back()->with('message', ['success', __("Task eliminado correctamente")]);
    
     }
 }

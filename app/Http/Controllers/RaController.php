@@ -53,7 +53,7 @@ class RaController extends Controller
      */
     public function show($id)
     {
-        return view('ra.create');
+      //  return view('ra.create');
     
     }
 
@@ -93,8 +93,10 @@ class RaController extends Controller
      */
     public function destroy($id)
     {
-        ra::find($id)->delete();
-        return redirect()->route('ra.index')->with('success','Registro eliminado satisfactoriamente');
+        ra::find($id)->update([
+            'deleted'=> '1'
+        ]);
+        return back()->with('message', ['success', __("Ra eliminado correctamente")]);
    
     }
 }

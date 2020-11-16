@@ -51,8 +51,8 @@ class ModuleController extends Controller
      */
     public function show($id)
     {
-        $module=module::find($id);
-        return  view('module.show',compact('module'));
+        //$module=module::find($id);
+        //return  view('module.show',compact('module'));
     
     }
 
@@ -92,8 +92,10 @@ class ModuleController extends Controller
      */
     public function destroy($id)
     {
-        module::find($id)->delete();
-        return redirect()->route('module.index')->with('success','Registro eliminado satisfactoriamente');
+        module::find($id)->update([
+            'deleted'=> '1'
+        ]);
+        return back()->with('message', ['success', __("Module eliminado correctamente")]);
    
     }
 }
