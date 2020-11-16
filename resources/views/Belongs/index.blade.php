@@ -17,8 +17,8 @@
               <td class="sorting_1" tabindex="0">{{ $belong->student_id }}</td>
               <td>{{ $belong->enterprise_id }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('belong.edit',$user->id) }}">{{ __("Modify") }}</a>
-                <form method="POST" action="{{ route('belong.destroy',$user->id) }}">
+                <a class="btn btn-primary" href="{{ route('belong.edit',$belong->id) }}">{{ __("Modify") }}</a>
+                <form method="POST" action="{{ route('belong.destroy',$belong->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
                   <button type="submit" name="deleteBelong" class="btn btn-danger"> {{ __("Delete") }} </button> 
