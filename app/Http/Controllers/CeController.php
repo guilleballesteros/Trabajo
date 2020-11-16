@@ -53,7 +53,7 @@ class CeController extends Controller
          */
         public function show($id)
         {
-            //
+            //return view('ce.create');
         
         }
     
@@ -92,8 +92,10 @@ class CeController extends Controller
          */
         public function destroy($id)
         {
-            ce::find($id)->delete();
-            return redirect()->route('ce.index')->with('success','Registro eliminado satisfactoriamente');
+            ce::find($id)->update([
+                'deleted'=> '1'
+            ]);
+            return back()->with('message', ['success', __("CE eliminado correctamente")]);
        
         }
 }

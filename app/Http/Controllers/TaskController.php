@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\task;
 
 class TaskController extends Controller
 {
@@ -15,7 +16,7 @@ class TaskController extends Controller
     {
        //
        $task = task::all();
-        return view('task.index',compact('taks'));
+        return view('Tasks.index',compact('task'));
     }
 
     /**
@@ -26,7 +27,7 @@ class TaskController extends Controller
     public function create()
     {
        //
-       return view('task.create');
+       return view('Tasks.create');
     }
 
     /**
@@ -40,7 +41,7 @@ class TaskController extends Controller
          //
          $this->validate($request,['number'=>'required', 'description'=>'required', 'deleted'=>'required']);
          task::create($request->all());
-         return redirect()->route('task.index')->with('success','Registro creado satisfactoriamente');
+         return redirect()->route('Tasks.index')->with('success','Registro creado satisfactoriamente');
      
     }
 
@@ -52,8 +53,8 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        $task=task::find($id);
-        return  view('task.show',compact('task'));
+        //$task=task::find($id);
+        //return  view('task.show',compact('task'));
     
     }
 
@@ -66,7 +67,7 @@ class TaskController extends Controller
     public function edit($id)
     {
         $task=task::find($id);
-        return view('task.edit',compact('task'));
+        return view('Tasks.update',compact('task'));
     }
 
     /**
@@ -81,7 +82,7 @@ class TaskController extends Controller
         $this->validate($request,['number'=>'required', 'description'=>'required', 'deleted'=>'required']);
  
         task::find($id)->update($request->all());
-        return redirect()->route('task.index')->with('success','Registro actualizado satisfactoriamente');
+        return redirect()->route('Tasks.index')->with('success','Registro actualizado satisfactoriamente');
  
     }
 
@@ -93,8 +94,10 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        task::find($id)->delete();
-        return redirect()->route('task.index')->with('success','Registro eliminado satisfactoriamente');
+        task::find($id)->update([
+            'deleted'=> '1'
+        ]);
+        return back()->with('message', ['success', __("Task eliminado correctamente")]);
    
     }
 }
