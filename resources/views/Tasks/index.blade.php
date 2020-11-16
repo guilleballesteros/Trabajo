@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layouts.layout')
 @section('content')
 
   <div class="row"><div class="col-sm-12">
@@ -42,7 +42,7 @@
     </div>
 
     <div class="card-footer">
-      <a href="añadirTask" class="btn btn-primary">Añadir task</a>
+      <a href="{{ route('task.create')}}" class="btn btn-primary">Añadir task</a>
     </div>
  
 @endsection

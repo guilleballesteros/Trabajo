@@ -27,7 +27,7 @@
 			    	<div class="panel-body">					
     					<div class="table-container">
 	        				<div class="card-primary">
-			    			<form method="POST" action="{{ route('User.update',$user->id) }}"  role="form">
+			    			<form method="POST" action="{{ route('task.create', $task->id)}}"  role="form">
 				    		{{ csrf_field() }}
 								<input name="_method" type="hidden" value="PATCH">
 					    		<div class="card-body">
