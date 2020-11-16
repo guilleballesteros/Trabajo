@@ -19,7 +19,7 @@ class CreateModulesTable extends Migration
             $table->string('name');
             $table->unsignedInteger('cycle_id');
             $table->foreign('cycle_id')->references('id')->on('cycles');    
-            $table->boolean('deleted');
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

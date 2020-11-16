@@ -21,7 +21,7 @@ class CreateAssistancesTable extends Migration
             $table->date('date');
             $table->string('assistance');
             $table->boolean('accepted');
-            $table->boolean('deleted');
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

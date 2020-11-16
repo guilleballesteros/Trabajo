@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layouts.layout')
 @section('content')
 
 <div class="wrapper">
@@ -27,7 +27,7 @@
 				<div class="panel-body">					
 					<div class="table-container">
 					<div class="card-primary">
-						<form method="POST" action="user"  role="form">
+						<form method="POST" action="{{ route('User.store') }}"  role="form">
 						{{ csrf_field() }}
 							<div class="card-body">
 							<div class="form-group">

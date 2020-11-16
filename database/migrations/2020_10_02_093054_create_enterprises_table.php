@@ -18,7 +18,7 @@ class CreateEnterprisesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email');
-            $table->boolean('deleted');
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

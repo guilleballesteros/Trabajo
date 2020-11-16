@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layout.layout')
 @section('content')
   <div class="row"><div class="col-sm-12">
       <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
@@ -14,6 +14,14 @@
           <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $enterprise->name }}</td>
               <td>{{ $enterprise->email }}</td>
+              <td>
+                <a class="btn btn-primary" href="{{ route('enterprise.edit',$enterprise->id) }}">Modify</a>
+                <form method="POST" action="{{ route('enterprise.destroy',$enterprise->id) }}">
+                {{ method_field('DELETE') }}
+                {{ csrf_field() }} 
+                  <button type="submit" name="deleteenterprise" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                </form>
+              </td>
           </tr>
           @empty
               <div class="alert alert-danger">
@@ -31,7 +39,7 @@
     </div>
 
     <div class="card-footer">
-      <a href="añadirempresa" class="btn btn-primary">Add enterprise</a>
+      <a href="{{ route('enterprise.create') }}" class="btn btn-primary">Add enterprise</a>
     </div>
 
 @endsection

@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layouts.layout')
 @section('content')
 
   <div class="row"><div class="col-sm-12">
@@ -29,8 +29,8 @@
               <td>{{ $user->enterprise_id }}</td>
               <td>{{ $user->cycle_id }}</td>
               <td>
-                <a class="btn btn-primary" href="modUser/{{ $user->id }}">Modificar</a>
-                <form method="POST" action="DelUser/{{ $user->id }}">
+                <a class="btn btn-primary" href="{{ route('User.edit',$user->id) }}">Modificar</a>
+                <form method="POST" action="{{ route('User.destroy',$user->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
                   <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
@@ -61,7 +61,7 @@
     </div>
 
     <div class="card-footer">
-      <a href="añadirUsuario" class="btn btn-primary">Añadir usuario</a>
+      <a href="{{ route('User.create') }}" class="btn btn-primary">Añadir usuario</a>
     </div>
  
 @endsection

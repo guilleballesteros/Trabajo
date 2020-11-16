@@ -23,7 +23,7 @@ class CreateVisitsTable extends Migration
             $table->date('date');
             $table->float('kms');
             $table->boolean('accepted');
-            $table->boolean('deleted');
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

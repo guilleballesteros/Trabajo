@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\cycle;
 
 class CycleController extends Controller
 {
@@ -14,8 +15,8 @@ class CycleController extends Controller
     public function index()
     {
         //
-        $Cycles=cycle::orderBy('id','DESC')->paginate(3);
-        return view('cycle.index',compact('Cycles')); 
+        $cycles = User::all();
+        return view('Cycles.index',compact('cycles'));
     }
 
     /**
@@ -26,7 +27,7 @@ class CycleController extends Controller
     public function create()
     {
         //
-        return view('cycle.create');
+        return view('Cycles.create');
     }
 
     /**
@@ -38,6 +39,14 @@ class CycleController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate(request(),[ 
+            'name'=>'required',
+            'grade'=>'required', 
+            'year'=>'required',
+            'autor'=>'required', 
+       ]);
+       User::create(request()->all());
+       return redirect()->route('Cycles.index')->with('message',['success','ciclo creado correctamente']);
     }
 
     /**
@@ -49,8 +58,6 @@ class CycleController extends Controller
     public function show($id)
     {
         //
-        $Cycles=cycle::find($id);
-        return  view('cycle.show',compact('Cycles'));
     }
 
     /**
@@ -62,6 +69,8 @@ class CycleController extends Controller
     public function edit($id)
     {
         //
+        $cycle= cycle::find($id);
+        return view('Cycles.update',compact('cycle'));
     }
 
     /**
@@ -74,10 +83,14 @@ class CycleController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->validate($request,[ 'id'=>'required', 'name'=>'required', 'grade'=>'required', 'year'=>'required', 'deleted'=>'required']);
- 
-        cycle::find($id)->update($request->all());
-        return redirect()->route('cycle.index')->with('success','Registro actualizado correctamente');
+        $this->validate(request(),[ 
+            'name'=>'required',
+            'grade'=>'required', 
+            'year'=>'required', 
+            'autor'=>'required', 
+       ]);
+       cycle:: find($id)->update(request()->all());
+       return redirect()->route('Cycle.index')->with('message',['success','ciclo modificado correctamente']);
     }
 
     /**
@@ -89,7 +102,9 @@ class CycleController extends Controller
     public function destroy($id)
     {
         //
-        cycle::find($id)->delete();
-        return redirect()->route('cycle.index')->with('success','Registro eliminado correctamente');
+        cycle::find($id)->update([
+            'deleted'=> '1'
+        ]);
+        return back()->with('message', ['success', __("Ciclo eliminado correctamente")]);
     }
 }

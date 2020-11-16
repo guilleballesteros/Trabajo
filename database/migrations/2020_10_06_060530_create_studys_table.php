@@ -20,7 +20,7 @@ class CreateStudysTable extends Migration
             $table->foreign('student_id')->references('id')->on('users');
             $table->unsignedInteger('cycle_id');
             $table->foreign('cycle_id')->references('id')->on('cycles');
-            $table->boolean('deleted');
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }
