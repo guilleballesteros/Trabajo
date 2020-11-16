@@ -21,7 +21,7 @@
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Nueva empresa</h3>
+					<h3 class="panel-title">New enterprise</h3>
 				</div>
 				<div class="panel-body">					
 					<div class="table-container">
@@ -36,7 +36,7 @@
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="email" id="email" class="form-control input-sm" value="{{$enterprise->first name}}">
+										<input type="text" name="email" id="email" class="form-control input-sm" value="{{$enterprise->email}}">
 									</div>
 								</div>
 							</div>
@@ -44,7 +44,7 @@
 
 								<div class="col-xs-12 col-sm-12 col-md-12">
 									<input type="submit"  value="Actualizar" class="btn btn-success btn-block">
-									<a href="{{ route('enterprise.index') }}" class="btn btn-info btn-block" >Atrás</a>
+									<a href="{{ route('enterprise.index') }}" class="btn btn-info btn-block" >Back</a>
 								</div>	
 
 							</div>

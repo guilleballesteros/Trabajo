@@ -39,7 +39,7 @@ class EnterpriseController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request,[ 'name'=>'required', 'email'=>'required', 'deleted'=>'required']);
+        $this->validate($request,[ 'name'=>'required', 'email'=>'required']);
         enterprise::create($request->all());
         return redirect()->route('enterprise.index')->with('success','Registro creado satisfactoriamente');
     }
@@ -53,8 +53,6 @@ class EnterpriseController extends Controller
     public function show($id)
     {
         //
-        $Enterprises=enterprise::find($id);
-        return  view('enterprise.show',compact('Enterprises'));
     }
 
     /**
@@ -66,6 +64,8 @@ class EnterpriseController extends Controller
     public function edit($id)
     {
         //
+        $enterprise= enterprise::find($id);
+        return view('Enterprise.edit',compact('enterprise'));
     }
 
     /**
@@ -78,10 +78,10 @@ class EnterpriseController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->validate($request,[ 'nombre'=>'required', 'email'=>'required', 'deleted'=>'required']);
+        $this->validate($request,[ 'name'=>'required', 'email'=>'required']);
  
-        libro::find($id)->update($request->all());
-        return redirect()->route('enterprise.index')->with('success','Registro actualizado satisfactoriamente');
+        enterprise:: find($id)->update(request()->all());
+        return back()->with('message', ['success', __("Usuario modificado correctamente")]);
     }
 
     /**
