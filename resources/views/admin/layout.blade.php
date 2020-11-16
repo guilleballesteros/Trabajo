@@ -81,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="http://localhost/Trabajo/public/usuarios" class="nav-link active">
+            <a href="{{ route('User.index') }}" class="nav-link active">
               <i class="nav-icon fas "></i>
               <p>
                 Usuarios

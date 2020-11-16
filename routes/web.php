@@ -21,14 +21,7 @@ Route::get('/admin', function (){
 Route::get('/registro', function (){
     return view('auth.register');
 });
-Route::get('/usuarios','UserController@index');
-Route::get('/añadirUsuario',function(){
-    return view('Users.create');
-});
-Route::post('/user','UserController@store');
-Route::post('/userU','UserController@update');
-Route::get('/modUser/{user}','UserController@show');
-Route::Delete('DelUser/{user}','UserController@destroy');
+
 Auth::routes();
 Route::resource('User','UserController');
 

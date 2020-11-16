@@ -75,7 +75,7 @@ class CycleController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->validate($request,[ 'id'=>'required', 'name'=>'required', 'grade'=>'required', 'year'=>'required', 'deleted'=>'required']);
+        $this->validate($request,[ 'id'=>'required', 'name'=>'required', 'grade'=>'required', 'year'=>'required']);
  
         cycle::find($id)->update($request->all());
         return redirect()->route('cycle.index')->with('success','Registro actualizado correctamente');

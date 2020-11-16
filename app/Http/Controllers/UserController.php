@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('Users.create');
     }
 
     /**
@@ -58,7 +58,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {   
-        return view('Users.update',compact('user'));
+       //
     }
 
     /**
@@ -69,7 +69,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user= User::find($id);
+        return view('Users.update',compact('user'));
     }
 
     /**
