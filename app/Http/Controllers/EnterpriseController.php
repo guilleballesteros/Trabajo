@@ -14,7 +14,6 @@ class EnterpriseController extends Controller
      */
     public function index()
     {
-        //
         $enterprises = enterprise::all();
         return view('Enterprise.index',compact('enterprises'));
     }

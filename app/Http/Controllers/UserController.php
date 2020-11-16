@@ -46,7 +46,7 @@ class UserController extends Controller
              'enterprise_id'=>'required'
         ]);
         User::create(request()->all());
-        return back()->with('message', ['success', __("Usuario creado correctamente")]);
+        return redirect()->route('User.index')->with('message',['success','Usuario creado correctamente']);
      
     }
 
@@ -91,7 +91,7 @@ class UserController extends Controller
             'enterprise_id'=>'required'
        ]);
        User:: find($id)->update(request()->all());
-       return back()->with('message', ['success', __("Usuario creado correctamente")]);
+       return redirect()->route('User.index')->with('message',['success','Usuario modificado correctamente']);
     }
 
     /**

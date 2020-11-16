@@ -30,10 +30,10 @@
               <td>{{ $user->cycle_id }}</td>
               <td>
                 <a class="btn btn-primary" href="{{ route('User.edit',$user->id) }}">Modificar</a>
-                <form method="POST" action="DelUser/{{ $user->id }}">
+                <form method="POST" action="{{ route('User.destroy',$user->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
-                  <button type="submit" name="{{ route('User.destroy',$user->id) }}" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                  <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
                 </form>
               </td>
            </tr>
