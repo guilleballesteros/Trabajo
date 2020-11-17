@@ -8,7 +8,7 @@ class belong extends Model
 {
     protected $table='belongs';
     protected $fillable=[
-        'student_id','enterprice_id','deleted'
+        'student_id','enterprise_id','deleted'
     ];
     public function student(){
         return $this->belongsTo(student::class,'student_id');
