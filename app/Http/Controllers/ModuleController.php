@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\module;
+use App\cycle;
 
 class ModuleController extends Controller
 {
@@ -13,8 +15,8 @@ class ModuleController extends Controller
      */
     public function index()
     {
-       //
-       return view('module.create');
+       $modules=module::all();
+       return view('Modules.index',compact('modules'));
     }
 
     /**
@@ -24,8 +26,8 @@ class ModuleController extends Controller
      */
     public function create()
     {
-       //
-       return view('module.create');
+       $cycles=cycle::all();
+       return view('Modules.create',compact('cycles'));
     }
 
     /**
@@ -39,7 +41,7 @@ class ModuleController extends Controller
          //
          $this->validate($request,['name'=>'required', 'cycle_id'=>'required', 'deleted'=>'required']);
          task::create($request->all());
-         return redirect()->route('module.index')->with('success','Module creaded successfully');
+         return redirect()->route('Modules.index')->with('success','Module creaded successfully');
      
     }
 
@@ -65,7 +67,8 @@ class ModuleController extends Controller
     public function edit($id)
     {
         $module=module::find($id);
-        return view('module.edit',compact('module'));
+        $cycles=cycle::all();
+        return view('Modules.update',compact('module','cycles'));
     }
 
     /**
@@ -75,11 +78,11 @@ class ModuleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        $this->validate($request,['name'=>'required', 'cycle_id'=>'required', 'deleted'=>'required']);
+        $this->validate(request(),['name'=>'required', 'cycle_id'=>'required']);
  
-        module::find($id)->update($request->all());
+        module::find($id)->update(request()->all());
         return redirect()->route('module.index')->with('message',['success','Module modified successfully']);
  
     }
