@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ra;
 
 class RaController extends Controller
 {
@@ -15,8 +16,8 @@ class RaController extends Controller
     public function index()
     {
        //
-       $ra=ra::orderBy('id','DESC')->paginate(3);
-       return view('ra.index',compact('ra'));
+       $ra=ra::all();
+       return view('Ra.index',compact('ra'));
     }
 
     /**
@@ -27,7 +28,7 @@ class RaController extends Controller
     public function create()
     {
        //
-       return view('ra.create');
+       return view('Ra.create');
     }
 
     /**
@@ -41,7 +42,7 @@ class RaController extends Controller
          //
          $this->validate($request,['number'=>'required', 'description'=>'required', 'module_id'=>'required', 'deleted'=>'required']);
          ra::create($request->all());
-         return redirect()->route('ra.index')->with('success','Registro creado satisfactoriamente');
+         return redirect()->route('Ra.index')->with('success','Registro creado satisfactoriamente');
      
     }
 
@@ -66,7 +67,7 @@ class RaController extends Controller
     public function edit($id)
     {
         $ra=ra::find($id);
-        return view('ra.edit',compact('ra'));
+        return view('Ra.update',compact('ra'));
     }
 
     /**
@@ -81,7 +82,7 @@ class RaController extends Controller
         $this->validate($request,['number'=>'required', 'description'=>'required', 'module_id'=>'required', 'deleted'=>'required']);
  
         ra::find($id)->update($request->all());
-        return redirect()->route('ra.index')->with('success','Registro actualizado satisfactoriamente');
+        return redirect()->route('Ra.index')->with('success','Registro actualizado satisfactoriamente');
  
     }
 

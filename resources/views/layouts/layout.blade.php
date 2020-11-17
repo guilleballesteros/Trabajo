@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Admin</title>
+  <title>Home page</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="http://localhost/trabajo/public/adminlte/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
@@ -32,15 +32,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
     </ul>
 
-    <!-- SEARCH FORM -->
+    <!-- SEARCH FORM
     <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
@@ -50,14 +44,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </button>
         </div>
       </div>
-    </form>
+    </form> -->
   </nav>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href='http://localhost/trabajo/public/inicio' class="brand-link">
       <img src="http://localhost/trabajo/public/adminlte/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">Dual Dam</span>
@@ -110,6 +104,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
             
+            
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -129,7 +124,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link active">
+                <a href="{{ route('ra.index') }}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
                     Ra
