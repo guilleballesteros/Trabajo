@@ -82,7 +82,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="{{ route('User.index') }}" class="nav-link active">
-            <i class="far fa-circle nav-icon"></i>
+              <i class="fas fa-user"></i>
               <p>
                 Usuarios
               </p>
@@ -90,14 +90,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             
             
             <a href="cycles" class="nav-link active">
-            <i class="far fa-circle nav-icon"></i>
+            <i class="fas fa-chalkboard"></i>
               <p>
                 Cycles
               </p>
             </a>
 
             <a href="task" class="nav-link active">
-            <i class="far fa-circle nav-icon"></i>
+            <i class="fas fa-clipboard-list"></i>
               <p>
                 Taks
               </p>
@@ -106,7 +106,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="fas fa-city"></i>
+              <i class="fas fa-book"></i>
               <p>
                 Modules
                 <i class="right fas fa-angle-left"></i>
