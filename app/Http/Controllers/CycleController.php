@@ -15,7 +15,7 @@ class CycleController extends Controller
     public function index()
     {
         //
-        $cycles = User::all();
+        $cycles = cycle::all();
         return view('Cycles.index',compact('cycles'));
     }
 
@@ -70,7 +70,7 @@ class CycleController extends Controller
     {
         //
         $cycle= cycle::find($id);
-        return view('Cycles.update',compact('cycle'));
+        return view('Cycles.edit',compact('cycle'));
     }
 
     /**
