@@ -96,6 +96,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
 
+            <a href="{{ route('Tracing.index') }}" class="nav-link active">
+              <i class="fas fa-user"></i>
+              <p>
+                Tracing
+              </p>
+            </a>
+
             <a href="task" class="nav-link active">
             <i class="fas fa-clipboard-list"></i>
               <p>
