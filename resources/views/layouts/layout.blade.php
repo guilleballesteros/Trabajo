@@ -84,13 +84,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="{{ route('User.index') }}" class="nav-link active">
               <i class="fas fa-user"></i>
               <p>
-                Usuarios
+                Users
               </p>
             </a>
             
             
-            <a href="cycles" class="nav-link active">
-            <i class="fas fa-chalkboard"></i>
+            <a href="{{ route('cycle.index') }}" class="nav-link active">
+            <i class="far fa-circle nav-icon"></i>
               <p>
                 Cycles
               </p>

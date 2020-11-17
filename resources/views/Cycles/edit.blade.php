@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layouts.layout')
 @section('content')
 
     <div class="wrapper">
@@ -28,7 +28,7 @@
 			    	<div class="panel-body">					
     					<div class="table-container">
 	        				<div class="card-primary">
-			    			<form method="POST" action="{{ route('cycle.update',$user->id) }}"  role="form">
+			    			<form method="POST" action="{{ route('cycle.update',$cycle->id) }}"  role="form">
 				    		{{ csrf_field() }}
 								<input name="_method" type="hidden" value="PATCH">
 					    		<div class="card-body">
