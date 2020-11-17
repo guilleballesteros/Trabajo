@@ -27,7 +27,7 @@
 				<div class="panel-body">					
 					<div class="table-container">
 					<div class="card-primary">
-						<form method="POST" action="{{ route('User.store') }}"  role="form">
+						<form method="POST" action="{{ route('task.create')}}"  role="form">
 						{{ csrf_field() }}
 							<div class="card-body">
 							<div class="form-group">
@@ -62,11 +62,22 @@
 							</div>
 							<div class="form-group">
 								<label for="enterpise_id">Enterprise id</label>
-								<input name="enterprise_id"type="enterprise_id" class="form-control" id="enterprise_id" placeholder="Enter enterprise id">
+								<select name="enterprise_id" class="form-control select2" style="width: 100%;">
+									<option selected="selected" value="">Empty</option>
+									@foreach($enterprises as $enterprise)
+									<option value="{{ $enterprise->id }}">{{ $enterprise->id }}------{{ $enterprise->name }}</option>
+									@endforeach
+								</select>
 							</div>
 							<div class="form-group">
 								<label for="cycle_id">Cycle id</label>
-								<input name="cycle_id" type="cycle_id" class="form-control" id="cycle_id" placeholder="Enter cycle id">
+								<select name="cycle_id" class="form-control select2" style="width: 100%;">
+									<option selected="selected" value="">Empty</option>
+									@foreach($cycles as $cycle)
+									<option value="{{ $cycle->id }}">{{ $cycle->id }}------{{ $cycle->name }}</option>
+									@endforeach
+								</select>
+								
 							</div>
 							<!-- /.card-body -->
 

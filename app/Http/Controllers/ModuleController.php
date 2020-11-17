@@ -39,7 +39,7 @@ class ModuleController extends Controller
          //
          $this->validate($request,['name'=>'required', 'cycle_id'=>'required', 'deleted'=>'required']);
          task::create($request->all());
-         return redirect()->route('module.index')->with('success','Registro creado satisfactoriamente');
+         return redirect()->route('module.index')->with('success','Module creaded successfully');
      
     }
 
@@ -51,8 +51,8 @@ class ModuleController extends Controller
      */
     public function show($id)
     {
-        $module=module::find($id);
-        return  view('module.show',compact('module'));
+        //$module=module::find($id);
+        //return  view('module.show',compact('module'));
     
     }
 
@@ -80,7 +80,7 @@ class ModuleController extends Controller
         $this->validate($request,['name'=>'required', 'cycle_id'=>'required', 'deleted'=>'required']);
  
         module::find($id)->update($request->all());
-        return redirect()->route('module.index')->with('success','Registro actualizado satisfactoriamente');
+        return redirect()->route('module.index')->with('message',['success','Module modified successfully']);
  
     }
 
@@ -92,8 +92,10 @@ class ModuleController extends Controller
      */
     public function destroy($id)
     {
-        module::find($id)->delete();
-        return redirect()->route('module.index')->with('success','Registro eliminado satisfactoriamente');
+        module::find($id)->update([
+            'deleted'=> '1'
+        ]);
+        return back()->with('message', ['success', __("Module deleted successfully")]);
    
     }
 }

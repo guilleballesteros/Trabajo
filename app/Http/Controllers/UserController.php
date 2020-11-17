@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\enterprise;
+use App\cycle;
 
 class UserController extends Controller
 {
@@ -25,7 +27,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('Users.create');
+        $enterprises=enterprise::all();
+        $cycles=cycle::all();
+        return view('Users.create',compact('enterprises','cycles'));
     }
 
     /**
@@ -69,8 +73,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $enterprises=enterprise::all();
+        $cycles=cycle::all();
         $user= User::find($id);
-        return view('Users.update',compact('user'));
+        return view('Users.update',compact('user','enterprises','cycles'));
     }
 
     /**
@@ -80,7 +86,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
         $this->validate(request(),[ 
             'name'=>'required',

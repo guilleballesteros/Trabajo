@@ -59,14 +59,35 @@
 						    	</div>
 							    <div class="form-group">
     								<label for="enterpise_id">Enterprise id</label>
-	    							<input name="enterprise_id"type="enterprise_id" class="form-control" id="enterprise_id" placeholder="Enter enterprise id" value="{{ $user->enterprise_id }}">
+                                    <select name="enterprise_id" class="form-control select2" style="width: 100%;">
+									@if(($user->enterprise_id)=='')
+										<option selected="selected" value="">Empty</option>
+									@endif
+									@foreach($enterprises as $enterprise)
+										@if(($user->enterprise_id)==($enterprise->id))
+										<option selected="selected" value="{{ $enterprise->id }}">{{ $enterprise->id }}------{{ $enterprise->name }}</option>
+										@else
+											<option value="{{ $enterprise->id }}">{{ $enterprise->id }}------{{ $enterprise->name }}</option>
+										@endif
+									@endforeach
+									</select>
 		    					</div>
 			    				<div class="form-group">
 				    				<label for="cycle_id">Cycle id</label>
-					    			<input name="cycle_id" type="cycle_id" class="form-control" id="cycle_id" placeholder="Enter cycle id" value="{{ $user->cycle_id }}">
+					    			<select name="cycle_id" class="form-control select2" style="width: 100%;">
+									@if(($user->enterprise_id)=='')
+										<option selected="selected" value="">Empty</option>
+									@endif
+									@foreach($cycles as $cycle)
+										@if(($user->cycle_id)==($cycle->id))
+										<option selected="selected" value="{{ $cycle->id }}">{{ $cycle->id }}------{{ $cycle->name }}</option>
+										@else
+										<option value="{{ $cycle->id }}">{{ $cycle->id }}------{{ $cycle->name }}</option>
+										@endif
+									@endforeach
+									</select>
 						    	</div>
 							    <!-- /.card-body -->
-
 	    						<div class="card-footer">
     							<button type="submit" class="btn btn-primary">Update</button>
 	    						</div>

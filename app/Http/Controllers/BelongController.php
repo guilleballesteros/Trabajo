@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\belong;
+use App\enterprise;
+use App\User;
 
 class BelongController extends Controller
 {
@@ -24,7 +27,9 @@ class BelongController extends Controller
      */
     public function create()
     {
-        //
+        $enterprises=enterprise::all();
+        $students=User::all();
+        return view('Belongs.create',compact('enterprises','students'));
     }
 
     /**
@@ -33,9 +38,14 @@ class BelongController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $this->validate(request(),[ 
+            'student_id'=>'required',
+            'enterprise_id'=>'required'
+       ]);
+       belong::create(request()->all());
+       return redirect()->route('belong.index')->with('message',['success','Relation created succesfully']);
     }
 
     /**
@@ -57,7 +67,10 @@ class BelongController extends Controller
      */
     public function edit($id)
     {
-        //
+        $belong= belong::find($id);
+        $enterprises=enterprise::all();
+        $students=User::all();
+        return view('Belongs.update',compact('belong','enterprises','students'));
     }
 
     /**
@@ -67,9 +80,14 @@ class BelongController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $this->validate(request(),[ 
+            'student_id'=>'required',
+            'enterprise_id'=>'required'
+       ]);
+       belong:: find($id)->update(request()->all());
+       return redirect()->route('belong.index')->with('message',['success','Relation modified successfully']);
     }
 
     /**
@@ -80,6 +98,10 @@ class BelongController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $belong= belong::find($id)->update([
+            'deleted'=> '1'
+        ]);
+        return back()->with('message', ['success', __("Relation destroyed succesfully")]);
+
     }
 }
