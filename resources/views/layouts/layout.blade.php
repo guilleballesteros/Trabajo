@@ -115,6 +115,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link">
               <i class="fas fa-city"></i>
               <p>
+                Modules
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('module.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                  Show
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Ra
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-city"></i>
+              <p>
                 Enterprises
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -137,15 +164,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
           </li>
         </ul>
       </nav>
