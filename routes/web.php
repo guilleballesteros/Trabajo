@@ -24,12 +24,9 @@ Route::get('/registro', function (){
 
 Auth::routes();
 Route::resource('User','UserController');
-
 Route::resource('task','TaskController');
 Route::resource('enterprise','EnterpriseController');
 Route::resource('belong','BelongController');
 Route::resource('module','ModuleController');
-Route::get('/cycles','CycleController@index');
-
-//Route::get('/modenterprise/{enterprise}','EnterpriseController@show');
-//Route::Delete('Delenterprise/{enterprise}','EnterpriseController@destroy');
+Route::resource('tracing','TracingController');
+Route::resource('cycles','CycleController');
