@@ -95,12 +95,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Cycles
               </p>
             </a>
-            <a href="ra" class="nav-link active">
-            <i class="far fa-circle nav-icon"></i>
-              <p>
-                RA
-              </p>
-            </a>
 
             <a href="task" class="nav-link active">
             <i class="far fa-circle nav-icon"></i>
@@ -129,7 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link active">
+                <a href="{{ route('ra.index') }}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
                     Ra

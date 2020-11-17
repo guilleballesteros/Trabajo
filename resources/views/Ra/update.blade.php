@@ -41,7 +41,7 @@
 							</div>
 							<div class="form-group">
 								<label for="module_id">Module_id</label>
-								<input name="module_id" type="module_id" class="form-control" id="module_id" placeholder="Enter module_id">
+								<input name="module_id" type="module_id" class="form-control" id="module_id" placeholder="Enter module_id" value="{{$ra->module_id}}">
 							</div>
 							    <!-- /.card-body -->
 

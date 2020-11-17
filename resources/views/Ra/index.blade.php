@@ -12,11 +12,12 @@
           </tr>
         </thead>
         <tbody>
-          @forelse($task as $task)
-            @if( ($task->deleted) ==0)
+          @forelse($ra as $ra)
+            @if( ($ra->deleted) ==0)
             <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $ra->number }}</td>
               <td>{{ $ra->description }}</td>
+              <td>{{ $ra->module_id }}</td>
               <td>
                 <a class="btn btn-primary" href="{{ route('ra.edit',$ra->id) }}">Modificar</a>
                 <form method="POST" action="{{ route('ra.destroy',$ra->id) }}">
