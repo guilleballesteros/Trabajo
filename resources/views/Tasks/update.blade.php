@@ -33,11 +33,11 @@
 					    		<div class="card-body">
 							<div class="form-group">
 								<label for="number">Number</label>
-								<input name="number"type="number" class="form-control" id="number" placeholder="Enter number">
+								<input name="number"type="number" class="form-control" id="number" placeholder="Enter number" value="{{$task->number}}">
 							</div>
 							<div class="form-group">
 								<label for="description">Description</label>
-								<input name="description" type="description" class="form-control" id="description" placeholder="Enter description">
+								<input name="description" type="description" class="form-control" id="description" placeholder="Enter description" value="{{$task->description}}">
 							</div>
 							    <!-- /.card-body -->
 
