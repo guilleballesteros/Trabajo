@@ -95,6 +95,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Cycles
               </p>
             </a>
+            <a href="ra" class="nav-link active">
+            <i class="far fa-circle nav-icon"></i>
+              <p>
+                RA
+              </p>
+            </a>
 
             <a href="task" class="nav-link active">
             <i class="far fa-circle nav-icon"></i>
@@ -102,6 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Taks
               </p>
             </a>
+            
             
           </li>
           <li class="nav-item has-treeview">
