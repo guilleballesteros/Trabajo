@@ -25,7 +25,7 @@
                 <form method="POST" action="{{ route('cycle.destroy',$cycle->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
-                  <button type="submit" name="deletecycle" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                  <button type="submit" name="deletecycle" class="btn btn-danger"> {{ __("Delete") }} </button>
                 </form>
               </td>
            </tr>
