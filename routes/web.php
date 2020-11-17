@@ -29,7 +29,7 @@ Route::resource('task','TaskController');
 Route::resource('enterprise','EnterpriseController');
 Route::resource('belong','BelongController');
 Route::resource('module','ModuleController');
-Route::get('/cycles','CycleController@index');
+Route::resource('cycle','CycleController');
 
 //Route::get('/modenterprise/{enterprise}','EnterpriseController@show');
 //Route::Delete('Delenterprise/{enterprise}','EnterpriseController@destroy');
