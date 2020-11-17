@@ -28,5 +28,12 @@ Route::resource('task','TaskController');
 Route::resource('enterprise','EnterpriseController');
 Route::resource('belong','BelongController');
 Route::resource('module','ModuleController');
+<<<<<<< HEAD
 Route::resource('tracing','TracingController');
 Route::resource('cycles','CycleController');
+=======
+Route::resource('cycle','CycleController');
+
+//Route::get('/modenterprise/{enterprise}','EnterpriseController@show');
+//Route::Delete('Delenterprise/{enterprise}','EnterpriseController@destroy');
+>>>>>>> ad12396a7a0afb9abdf9de21fe68dcc7d9123db3
