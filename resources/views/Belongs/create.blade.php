@@ -20,7 +20,7 @@
 			@endif
 
 			<div class="panel panel-default">
-				<div class="panel-heading">
+				<div class="row justify-content-center align-items-center">
 					<h3 class="panel-title">Creating a new Student and Enterprise Relation</h3>
 				</div>
 				<div class="panel-body">					
@@ -54,7 +54,10 @@
 							<!-- /.card-body -->
 
 							<div class="card-footer">
-							<button type="submit" class="btn btn-primary">Create</button>
+								<a href="{{ route('belong.index') }}">
+			                    	<button type="button" class="btn btn-outline-danger"><i class="fas fa-arrow-circle-left"></i>Back</button>
+		                    	</a>
+								<button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i>Create</button>
 							</div>
               			</form>
 						</div>

@@ -6,11 +6,12 @@
           <tr role="row">
             <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" aria-sort="descending">Name</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
-            <th>Acciones</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           @forelse($enterprises as $enterprise)
+          @if(($enterprise->deleted)==0)
           <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $enterprise->name }}</td>
               <td>{{ $enterprise->email }}</td>
@@ -23,6 +24,7 @@
                 </form>
               </td>
           </tr>
+          @endif
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ninguna empresa en este momento") }}
@@ -33,6 +35,7 @@
           <tr>
             <th rowspan="1" colspan="1">Name</th>
             <th rowspan="1" colspan="1">Email</th>
+            <th rowspan="1" colspan="1">Actions</th>
           </tr>
         </tfoot>
       </table>

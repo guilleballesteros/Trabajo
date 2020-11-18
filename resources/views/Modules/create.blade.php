@@ -21,7 +21,7 @@
 			@endif
 
 			<div class="panel panel-default">
-				<div class="panel-heading">
+				<div class="row justify-content-center align-items-center">
 					<h3 class="panel-title">Creating a new user</h3>
 				</div>
 				<div class="panel-body">					
