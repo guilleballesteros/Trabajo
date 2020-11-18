@@ -41,15 +41,15 @@
 							</div>
 							<div class="form-group">
 								<label for="ra_id">RA_id</label>
-								<input name="ra_id" type="ra_id" class="form-control" id="ra_id" placeholder="Enter ra_id" value="{{$ce->ra_id}}>
+								<input name="ra_id" type="ra_id" class="form-control" id="ra_id" placeholder="Enter ra_id" value="{{$ce->ra_id}}">
 							</div>
 							<div class="form-group">
 								<label for="task_id">Task_id</label>
-								<input name="task_id" type="task_id" class="form-control" id="task_id" placeholder="Enter task_id" value="{{$ce->task_id}}>
+								<input name="task_id" type="task_id" class="form-control" id="task_id" placeholder="Enter task_id" value="{{$ce->task_id}}">
 							</div>
-							<div class="form-group">
+							<div class= "form-group">
 								<label for="mark">Mark</label>
-								<input name="mark" type="mark" class="form-control" id="mark" placeholder="Enter mark" value="{{$ce->mark}}>
+								<input name="mark" type="mark" class="form-control" id="mark" placeholder="Enter mark" value="{{$ce->mark}}">
 							</div>
 							    <!-- /.card-body -->
 
