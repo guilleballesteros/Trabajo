@@ -15,7 +15,7 @@ class TaskController extends Controller
     public function index()
     {
        //
-       $task = task::all();
+       $task = task::all()->where('deleted',0);;
         return view('Tasks.index',compact('task'));
     }
 

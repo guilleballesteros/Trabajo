@@ -15,7 +15,7 @@ class TracingController extends Controller
     public function index()
     {
         //
-        $tracings = tracing::all();
+        $tracings = tracing::all()->where('deleted',0);;
         return view('Tracing.index',compact('tracings'));
     }
 
@@ -47,7 +47,7 @@ class TracingController extends Controller
             'tutor_c_id'=>'required', 
        ]);
        tracing::create(request()->all());
-       return redirect()->route('Tracing.index')->with('message',['success','Tracing created correctly']);
+       return redirect()->route('tracing.index')->with('message',['success','Tracing created correctly']);
     }
 
     /**
@@ -92,7 +92,7 @@ class TracingController extends Controller
             'tutor_c_id'=>'required'
        ]);
        tracing:: find($id)->update(request()->all());
-       return redirect()->route('Tracing.index')->with('message',['success','Tracing modificado correctamente']);
+       return redirect()->route('tracing.index')->with('message',['success','Tracing modificado correctamente']);
     }
 
     /**

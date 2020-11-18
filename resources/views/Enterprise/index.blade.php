@@ -11,6 +11,10 @@
         </thead>
         <tbody>
           @forelse($enterprises as $enterprise)
+<<<<<<< HEAD
+=======
+          
+>>>>>>> 98a39cf89c5350e27e8c0a90cbadc56674720aed
           <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $enterprise->name }}</td>
               <td>{{ $enterprise->email }}</td>
@@ -19,6 +23,10 @@
                 <a class="btn btn-danger" href="{{ route('enterprise.destroy',$enterprise->id) }}">{{ __("Delete") }}</a>
               </td>
           </tr>
+<<<<<<< HEAD
+=======
+          
+>>>>>>> 98a39cf89c5350e27e8c0a90cbadc56674720aed
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ninguna empresa en este momento") }}

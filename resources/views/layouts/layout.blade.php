@@ -89,6 +89,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
 
+            <a href="{{ route('tracing.index') }}" class="nav-link active">
+              <i class="fas fa-user"></i>
+              <p>
+                Tracing
+              </p>
+            </a>
+
             <a href="task" class="nav-link active">
             <i class="fas fa-clipboard-list"></i>
               <p>
@@ -112,6 +119,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <i class="far fa-circle nav-icon"></i>
                   <p>
                   Show
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('task.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Task
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('ce.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    CE
                   </p>
                 </a>
               </li>

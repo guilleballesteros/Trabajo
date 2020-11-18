@@ -13,7 +13,6 @@
         </thead>
         <tbody>
           @forelse($ra as $ra)
-            @if( ($ra->deleted) ==0)
             <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $ra->number }}</td>
               <td>{{ $ra->description }}</td>
@@ -27,7 +26,6 @@
                 </form>
               </td>
            </tr>
-           @endif
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ningún RA en este momento") }}

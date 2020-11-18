@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ce;
 
 class CeController extends Controller
 {
@@ -15,7 +16,7 @@ class CeController extends Controller
         public function index()
         {
            //
-           $ce=ce::orderBy('id','DESC')->paginate(3);
+           $ce=ce::all()->where('deleted',0);;
            return view('ce.index',compact('ce'));
         }
     

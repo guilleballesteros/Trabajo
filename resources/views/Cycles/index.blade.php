@@ -14,7 +14,7 @@
         </thead>
         <tbody>
           @forelse($cycles as $cycle)
-            @if( ($cycle->deleted) ==0)
+            
             <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $cycle->name }}</td>
               <td>{{ $cycle->grade }}</td>
@@ -29,7 +29,7 @@
                 </form>
               </td>
            </tr>
-           @endif
+           
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ningún ciclo en este momento") }}
