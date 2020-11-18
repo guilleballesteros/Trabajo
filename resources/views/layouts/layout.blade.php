@@ -103,6 +103,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
             
+            <a href="task_done" class="nav-link active">
+            <i class="fas fa-clipboard-list"></i>
+              <p>
+                Taks_done
+              </p>
+            </a>
             
           </li>
           <li class="nav-item has-treeview">

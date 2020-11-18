@@ -13,4 +13,9 @@ class task_done extends Model
     public function task(){
         return $this->belongsTo(task::class,'task_id');
     }
+
+    public function student(){
+        return $this->belongsTo(User::class,'student_id');
+    }
+
 }

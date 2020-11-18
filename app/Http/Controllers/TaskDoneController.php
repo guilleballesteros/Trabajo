@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\task_done;
+use App\User;
 
 class TaskDoneController extends Controller
 {
@@ -14,7 +16,7 @@ class TaskDoneController extends Controller
     public function index()
     {
         //
-        $task_dones = task_done::all();
+        $task_dones = task_done::all()->where('deleted',0);
         return view('task_done.index',compact('task_dones'));
     }
 
@@ -26,9 +28,9 @@ class TaskDoneController extends Controller
     public function create()
     {
         //
-        $task_dones=task_done::all();
-        $Users=User::all();
-        return view('task_done.create',compact('task_done','Users'));
+        $task_dones=task_done::all()->where('deleted',0);
+        $Users=User::all()->where('deleted',0);
+        return view('task_done.create',compact('Users'));
     }
 
     /**
@@ -43,7 +45,7 @@ class TaskDoneController extends Controller
         $this->validate(request(),[ 
             'student_id'=>'required',
             'task_id'=>'required', 
-            'task'=>'required',
+            'mask'=>'required',
        ]);
        task_done::create(request()->all());
        return redirect()->route('task_done.index')->with('message',['success','Task done creado correctamente']);
@@ -70,6 +72,7 @@ class TaskDoneController extends Controller
     {
         //
         $task_dones=task_done::all();
+        $Users=User::all();
         $task_done= task_done::find($id);
         return view('task_done.update',compact('task_done','Users'));
     }
@@ -87,7 +90,7 @@ class TaskDoneController extends Controller
         $this->validate(request(),[ 
             'student_id'=>'required',
             'task_id'=>'required', 
-            'task'=>'required', 
+            'mask'=>'required', 
        ]);
        task_done:: find($id)->update(request()->all());
        return redirect()->route('task_done.index')->with('message',['success','Task_done modificado correctamente']);
@@ -105,6 +108,6 @@ class TaskDoneController extends Controller
         task_done::find($id)->update([
             'deleted'=> '1'
         ]);
-        return back()->with('message', ['success', __("Usuario eliminado correctamente")]);
+        return back()->with('message', ['success', __("Task done eliminado correctamente")]);
     }
 }
