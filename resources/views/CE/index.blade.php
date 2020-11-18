@@ -16,7 +16,7 @@
         </thead>
         <tbody>
           @forelse($ce as $ce)
-            @if( ($ce->deleted) ==0)
+          
             <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $ce->word }}</td>
               <td>{{ $ce->description }}</td>
@@ -32,7 +32,7 @@
                 </form>
               </td>
            </tr>
-           @endif
+           
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ningún CE en este momento") }}
