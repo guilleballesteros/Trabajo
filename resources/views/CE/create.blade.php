@@ -22,12 +22,12 @@
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Creating a new RA</h3>
+					<h3 class="panel-title">Creating a new CE</h3>
 				</div>
 				<div class="panel-body">					
 					<div class="table-container">
 					<div class="card-primary">
-						<form method="POST" action="ra"  role="form">
+						<form method="POST" action="ce"  role="form">
 						{{ csrf_field() }}
 							<div class="card-body">
 							<div class="form-group">

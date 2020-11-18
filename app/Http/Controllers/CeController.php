@@ -15,7 +15,7 @@ class CeController extends Controller
         public function index()
         {
            //
-           $ce=ce::orderBy('id','DESC')->paginate(3);
+           $ce=ra::all()->where('deleted',0);;
            return view('ce.index',compact('ce'));
         }
     

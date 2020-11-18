@@ -5,22 +5,27 @@
       <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
         <thead>
           <tr role="row">
-            <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="number: activate to sort column ascending" aria-sort="descending">Number</th>
+            <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="word: activate to sort column ascending" aria-sort="descending">Word</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="description: activate to sort column ascending">Description</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="module_id: activate to sort column ascending">Module_id</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ra_id: activate to sort column ascending">Ra_id</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ra_id: activate to sort column ascending">Task_id</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ra_id: activate to sort column ascending">mark</th>
+
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          @forelse($ra as $ra)
-            @if( ($ra->deleted) ==0)
+          @forelse($ce as $ce)
+            @if( ($ce->deleted) ==0)
             <tr role="row" class="odd">
-              <td class="sorting_1" tabindex="0">{{ $ra->number }}</td>
-              <td>{{ $ra->description }}</td>
-              <td>{{ $ra->module_id }}</td>
+              <td class="sorting_1" tabindex="0">{{ $ce->word }}</td>
+              <td>{{ $ce->description }}</td>
+              <td>{{ $ce->ra_id }}</td>
+              <td>{{ $ce->task_id }}</td>
+              <td>{{ $ce->mark }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('ra.edit',$ra->id) }}">Modificar</a>
-                <form method="POST" action="{{ route('ra.destroy',$ra->id) }}">
+                <a class="btn btn-primary" href="{{ route('ce.edit',$ce->id) }}">Modificar</a>
+                <form method="POST" action="{{ route('ce.destroy',$ce->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
                   <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
@@ -30,22 +35,24 @@
            @endif
           @empty
               <div class="alert alert-danger">
-                  {{ __("No hay ningún RA en este momento") }}
+                  {{ __("No hay ningún CE en este momento") }}
               </div>
           @endforelse
         </tbody>
         <tfoot>
           <tr>
-            <th rowspan="1" colspan="1">number</th>
+            <th rowspan="1" colspan="1">word</th>
             <th rowspan="1" colspan="1">description</th>
-            <th rowspan="1" colspan="1">module_id</th>
+            <th rowspan="1" colspan="1">ra_id</th>
+            <th rowspan="1" colspan="1">task_id</th>
+            <th rowspan="1" colspan="1">mark</th>
           </tr>
         </tfoot>
       </table>
     </div>
 
     <div class="card-footer">
-      <a href="{{ route('ra.create')}}" class="btn btn-primary">Añadir RA</a>
+      <a href="{{ route('ce.create')}}" class="btn btn-primary">Añadir CE</a>
     </div>
  
 @endsection
