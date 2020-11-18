@@ -7,16 +7,15 @@
           <tr role="row">
             <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="word: activate to sort column ascending" aria-sort="descending">Word</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="description: activate to sort column ascending">Description</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ra_id: activate to sort column ascending">Ra_id</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ra_id: activate to sort column ascending">Task_id</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ra_id: activate to sort column ascending">mark</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ra_id: activate to sort column ascending">RA_id</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="task_id: activate to sort column ascending">Task_id</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="mark: activate to sort column ascending">Mark</th>
 
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           @forelse($ce as $ce)
-          
             <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $ce->word }}</td>
               <td>{{ $ce->description }}</td>
@@ -32,7 +31,6 @@
                 </form>
               </td>
            </tr>
-           
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ningún CE en este momento") }}

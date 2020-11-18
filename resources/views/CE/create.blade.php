@@ -31,16 +31,24 @@
 						{{ csrf_field() }}
 							<div class="card-body">
 							<div class="form-group">
-								<label for="number">Number</label>
-								<input name="number"type="number" class="form-control" id="number" placeholder="Enter number">
+								<label for="word">Word</label>
+								<input name="word"type="word" class="form-control" id="word" placeholder="Enter word">
 							</div>
 							<div class="form-group">
 								<label for="description">Description</label>
 								<input name="description" type="description" class="form-control" id="description" placeholder="Enter description">
 							</div>
 							<div class="form-group">
-								<label for="module_id">Module_id</label>
-								<input name="module_id" type="module_id" class="form-control" id="module_id" placeholder="Enter module_id">
+								<label for="ra_id">RA_id</label>
+								<input name="ra_id" type="ra_id" class="form-control" id="ra_id" placeholder="Enter ra_id">
+							</div>
+							<div class="form-group">
+								<label for="task_id">Task_id</label>
+								<input name="task_id" type="task_id" class="form-control" id="task_id" placeholder="Enter task_id">
+							</div>
+							<div class="form-group">
+								<label for="mark">Mark</label>
+								<input name="mark" type="mark" class="form-control" id="mark" placeholder="Enter mark">
 							</div>
 							<!-- /.card-body -->
 
