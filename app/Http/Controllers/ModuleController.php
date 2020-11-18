@@ -15,7 +15,7 @@ class ModuleController extends Controller
      */
     public function index()
     {
-       $modules=module::all();
+       $modules=module::all()->where('deleted',0);
        return view('Modules.index',compact('modules'));
     }
 
@@ -26,7 +26,7 @@ class ModuleController extends Controller
      */
     public function create()
     {
-       $cycles=cycle::all();
+       $cycles=cycle::all()->where('deleted',0);
        return view('Modules.create',compact('cycles'));
     }
 
@@ -67,7 +67,7 @@ class ModuleController extends Controller
     public function edit($id)
     {
         $module=module::find($id);
-        $cycles=cycle::all();
+        $cycles=cycle::all()->where('deleted',0);
         return view('Modules.update',compact('module','cycles'));
     }
 

@@ -8,15 +8,15 @@
       <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
         <thead>
           <tr role="row">
-            <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Nombre: activate to sort column ascending" aria-sort="descending">Nombre</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Apellido: activate to sort column ascending">Apellido</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Telefono: activate to sort column ascending">Telefono</th>
+            <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" aria-sort="descending">Name</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="First name: activate to sort column ascending">First name</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Telephone: activate to sort column ascending">Telephone</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Email Verificado: activate to sort column ascending">Email verificado</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Tipo: activate to sort column ascending">Tipo</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Id de la empresa: activate to sort column ascending">Id de la empresa</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Id del ciclo: activate to sort column ascending">Id del ciclo</th>
-            <th>Acciones</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Email verifyed: activate to sort column ascending">Email verifyed</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Type: activate to sort column ascending">Type</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Enterprise: activate to sort column ascending">Enterprise </th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Cycle: activate to sort column ascending">Cycle</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -31,12 +31,8 @@
               <td>{{$user->enterprise_id}}----{{ $user->find($user->id)->enterprise->name }}</td>
               <td>{{$user->cycle_id}}----{{ $user->find($user->id)->cycle->name }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('User.edit',$user->id) }}">Modificar</a>
-                <form method="POST" action="{{ route('User.destroy',$user->id) }}">
-                {{ method_field('DELETE') }} 
-                {{ csrf_field() }} 
-                  <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
-                </form>
+                <a class="btn btn-primary" href="{{ route('User.edit',$user->id) }}">{{ __("Modify") }}</a>
+                <a class="btn btn-danger" href="{{ route('User.destroy',$user->id) }}">{{ __("Delete") }}</a>
               </td>
            </tr>
           @empty
@@ -47,15 +43,15 @@
         </tbody>
         <tfoot>
           <tr>
-            <th rowspan="1" colspan="1">Nombre</th>
-            <th rowspan="1" colspan="1">Apellido</th>
-            <th rowspan="1" colspan="1">Telefono</th>
+            <th rowspan="1" colspan="1">Name</th>
+            <th rowspan="1" colspan="1">First name</th>
+            <th rowspan="1" colspan="1">Telephone</th>
             <th rowspan="1" colspan="1">Email</th>
-            <th rowspan="1" colspan="1">Email verificado</th>
-            <th rowspan="1" colspan="1">Tipo</th>
-            <th rowspan="1" colspan="1">Id de la empresa</th>
-            <th rowspan="1" colspan="1">Id del ciclo</th>
-            <th rowspan="1" colspan="1">Acciones</th>
+            <th rowspan="1" colspan="1">Email verifyed</th>
+            <th rowspan="1" colspan="1">Type</th>
+            <th rowspan="1" colspan="1">Enterprise</th>
+            <th rowspan="1" colspan="1">Cycle</th>
+            <th rowspan="1" colspan="1">Actions</th>
           </tr>
         </tfoot>
       </table>

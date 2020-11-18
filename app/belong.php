@@ -11,10 +11,10 @@ class belong extends Model
         'student_id','enterprise_id','deleted'
     ];
     public function student(){
-        return $this->belongsTo(student::class,'student_id');
+        return $this->belongsTo(User::class,'student_id');
     }
-    public function enterprice(){
-        return $this->belongTo(enterprice::class,'enterprice_id');
+    public function enterprise(){
+        return $this->belongsTo(enterprise::class,'enterprise_id');
     }
 
 }

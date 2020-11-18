@@ -11,20 +11,14 @@
         </thead>
         <tbody>
           @forelse($enterprises as $enterprise)
-          @if(($enterprise->deleted)==0)
           <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $enterprise->name }}</td>
               <td>{{ $enterprise->email }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('enterprise.edit',$enterprise->id) }}">Modify</a>
-                <form method="POST" action="{{ route('enterprise.destroy',$enterprise->id) }}">
-                {{ method_field('DELETE') }}
-                {{ csrf_field() }} 
-                  <button type="submit" name="deleteenterprise" class="btn btn-danger"> {{ __("Delete") }} </button> 
-                </form>
+                <a class="btn btn-primary" href="{{ route('enterprise.edit',$enterprise->id) }}">{{ __("Modify") }}</a>
+                <a class="btn btn-danger" href="{{ route('enterprise.destroy',$enterprise->id) }}">{{ __("Delete") }}</a>
               </td>
           </tr>
-          @endif
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ninguna empresa en este momento") }}
