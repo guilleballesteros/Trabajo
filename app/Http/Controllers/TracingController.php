@@ -15,7 +15,7 @@ class TracingController extends Controller
     public function index()
     {
         //
-        $tracings = tracing::all();
+        $tracings = tracing::all()->where('deleted',0);;
         return view('Tracing.index',compact('tracings'));
     }
 

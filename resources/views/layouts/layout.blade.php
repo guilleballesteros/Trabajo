@@ -129,6 +129,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ route('task.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Task
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('ce.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    CE
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route('ra.index') }}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>

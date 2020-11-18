@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ce;
 
 class CeController extends Controller
 {
@@ -15,8 +16,8 @@ class CeController extends Controller
         public function index()
         {
            //
-           $ce=ce::orderBy('id','DESC')->paginate(3);
-           return view('ce.index',compact('ce'));
+           $ce=ce::all()->where('deleted',0);;
+           return view('CE.index',compact('ce'));
         }
     
         /**
@@ -27,7 +28,7 @@ class CeController extends Controller
         public function create()
         {
            //
-           return view('ce.create');
+           return view('CE.create');
         }
     
         /**
@@ -41,7 +42,7 @@ class CeController extends Controller
              //
              $this->validate($request,['word'=>'required', 'description'=>'required', 'ra_id'=>'required', 'task_id'=>'required', 'mark'=>'required', 'deleted'=>'required']);
              ce::create($request->all());
-             return redirect()->route('ce.index')->with('success','Registro creado satisfactoriamente');
+             return redirect()->route('CE.index')->with('success','Registro creado satisfactoriamente');
          
         }
     
@@ -66,7 +67,7 @@ class CeController extends Controller
         public function edit($id)
         {
             $ce=ce::find($id);
-            return view('ce.edit',compact('ce'));
+            return view('CE.update',compact('ce'));
         }
     
         /**
@@ -80,7 +81,7 @@ class CeController extends Controller
         {
             $this->validate($request,['word'=>'required', 'description'=>'required', 'ra_id'=>'required', 'task_id'=>'required', 'mark'=>'required']);     
             ce::find($id)->update($request->all());
-            return redirect()->route('ce.index')->with('success','Registro actualizado satisfactoriamente');
+            return redirect()->route('CE.index')->with('success','Registro actualizado satisfactoriamente');
      
         }
     

@@ -15,7 +15,7 @@
         </thead>
         <tbody>
           @forelse($modules as $module)
-            @if( ($module->deleted) ==0)
+            
             <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $module->name }}</td>
               <td>{{ $module->cycle_id }}</td>
@@ -28,7 +28,6 @@
                 </form>
               </td>
            </tr>
-           @endif
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ningún Usuario en este momento") }}

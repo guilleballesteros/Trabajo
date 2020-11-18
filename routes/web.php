@@ -25,6 +25,7 @@ Route::get('/registro', function (){
 Auth::routes();
 Route::resource('User','UserController');
 
+Route::resource('ce','CeController');
 Route::resource('ra','RaController');
 Route::resource('task','TaskController');
 Route::resource('enterprise','EnterpriseController');

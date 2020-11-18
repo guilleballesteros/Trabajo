@@ -12,7 +12,6 @@
         </thead>
         <tbody>
           @forelse($task as $task)
-            @if( ($task->deleted) ==0)
             <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $task->number }}</td>
               <td>{{ $task->description }}</td>
@@ -25,7 +24,6 @@
                 </form>
               </td>
            </tr>
-           @endif
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ningún task en este momento") }}

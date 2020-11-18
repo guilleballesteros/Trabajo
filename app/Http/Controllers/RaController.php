@@ -16,7 +16,7 @@ class RaController extends Controller
     public function index()
     {
        //
-       $ra=ra::all();
+       $ra=ra::all()->where('deleted',0);;
        return view('Ra.index',compact('ra'));
     }
 

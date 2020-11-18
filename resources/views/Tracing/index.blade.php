@@ -15,7 +15,6 @@
         </thead>
         <tbody>
           @forelse($tracings as $tracing)
-            @if( ($user->deleted) ==0)
             <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $tracing->type }}</td>
               <td>{{ $tracing->reason }}</td>
@@ -31,7 +30,6 @@
                 </form>
               </td>
            </tr>
-           @endif
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ningún tracing en este momento") }}
