@@ -90,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
 
-            <a href="{{ route('Tracing.index') }}" class="nav-link active">
+            <a href="{{ route('tracing.index') }}" class="nav-link active">
               <i class="fas fa-user"></i>
               <p>
                 Tracing
