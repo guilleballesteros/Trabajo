@@ -17,12 +17,12 @@
 		    	@if(Session::has('success'))
 			    <div class="alert alert-info">
     				{{Session::get('success')}}
-			</div>
+				</div>
 	    		@endif
 
 			    <div class="panel panel-default">
-    				<div class="panel-heading">
-	    				<h3 class="panel-title">Creating a new user</h3>
+    				<div class="row justify-content-center align-items-center">
+	    				<h3 class="panel-title">Updating an User</h3>
 		    		</div>
 			    	<div class="panel-body">					
     					<div class="table-container">
@@ -89,8 +89,11 @@
 						    	</div>
 							    <!-- /.card-body -->
 	    						<div class="card-footer">
-    							<button type="submit" class="btn btn-primary">Update</button>
-	    						</div>
+    							<a href="{{ route('User.index') }}">
+			                    <button type="button" class="btn btn-outline-danger"><i class="fas fa-arrow-circle-left"></i>Back</button>
+		                    	</a>
+								<button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i>Update</button>
+								</div>
                   			</form>
 			    			</div>
 				    	</div>

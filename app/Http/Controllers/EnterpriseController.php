@@ -92,7 +92,9 @@ class EnterpriseController extends Controller
     public function destroy($id)
     {
         //
-        enterprise::find($id)->delete();
+        enterprise::find($id)->update([
+            'deleted'=> '1'
+        ]);
         return back()->with('message', ['success', __("Usuario modificado correctamente")]);
     }
 }

@@ -2,6 +2,9 @@
 @section('content')
 
   <div class="row"><div class="col-sm-12">
+    <div class="row justify-content-center align-items-center">
+	    <h1 class="panel-title">modules</h1>
+		</div>
       <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
         <thead>
           <tr role="row">

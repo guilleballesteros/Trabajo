@@ -12,12 +12,10 @@ class enterprise extends Model
     public function belongs(){
         return $this->hasMany(belong::class);
     }
-
-    public function Tutor_e(){
-        return $this->belongsTo(Tutor_e::class,'entreprise_id');
-    }
-
     public function visits(){
         return $this->hasMany(visits::class);
+    }
+    public function users(){
+        return $this->hasMany(User::class);
     }
 }

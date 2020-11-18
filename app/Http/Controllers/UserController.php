@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::all()->where('deleted',0);
         return view('Users.index',compact('users'));
     }
 
@@ -27,8 +27,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $enterprises=enterprise::all();
-        $cycles=cycle::all();
+        $enterprises=enterprise::all()->where('deleted',0);
+        $cycles=cycle::all()->where('deleted',0);
         return view('Users.create',compact('enterprises','cycles'));
     }
 
