@@ -31,8 +31,8 @@
               <td>{{$user->enterprise_id}}----{{ $user->find($user->id)->enterprise->name }}</td>
               <td>{{$user->cycle_id}}----{{ $user->find($user->id)->cycle->name }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('User.edit',$user->id) }}">{{ __("Modify") }}</a>
-                <a class="btn btn-danger" href="{{ route('User.destroy',$user->id) }}">{{ __("Delete") }}</a>
+                <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('User.edit',$user->id) }}"><i class="fas fa-edit"></i></a>
+                <a class="btn btn-danger" data-toggle="tooltip" title="delete" href="{{ route('User.destroy',$user->id) }}"><i class="far fa-trash-alt"></i></a>
               </td>
            </tr>
           @empty
@@ -58,7 +58,7 @@
     </div>
 
     <div class="card-footer">
-      <a href="{{ route('User.create') }}" class="btn btn-primary">Añadir usuario</a>
+      <a href="{{ route('User.create') }}" class="btn btn-primary">Add user</a>
     </div>
  
 @endsection

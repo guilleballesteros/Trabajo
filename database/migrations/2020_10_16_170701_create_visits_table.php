@@ -22,7 +22,7 @@ class CreateVisitsTable extends Migration
             $table->foreign('enterprise_id')->references('id')->on('enterprises');
             $table->date('date');
             $table->float('kms');
-            $table->boolean('accepted');
+            $table->boolean('accepted')->default(false);
             $table->boolean('deleted')->default(false);
             $table->timestamps();
         });

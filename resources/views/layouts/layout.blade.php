@@ -133,6 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="http://localhost/trabajo/public/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="http://localhost/trabajo/public/adminlte/js/adminlte.min.js"></script>
+
 <!-- bs-custom-file-input -->
 <script src="http://localhost/trabajo/public/adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script> 
 <!-- DataTables -->
@@ -161,6 +162,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         "autoWidth": false,
         "responsive": true,
       });
+    });
+  </script>
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
     });
   </script>
 

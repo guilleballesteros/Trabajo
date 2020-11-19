@@ -20,7 +20,7 @@ class CreateAssistancesTable extends Migration
             $table->foreign('student_id')->references('id')->on('users');
             $table->date('date');
             $table->string('assistance');
-            $table->boolean('accepted');
+            $table->boolean('accepted')->default(false);
             $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
