@@ -76,6 +76,127 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
       </div>
 
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="{{ route('User.index') }}" class="nav-link active">
+              <i class="fas fa-user"></i>
+              <p>
+                Users
+              </p>
+            </a>
+
+            <a href="{{ route('assistence.index') }}" class="nav-link active">
+              <i class="fas fa-user"></i>
+              <p>
+                Assistence
+              </p>
+            </a>
+            
+            <a href="{{ route('cycle.index') }}" class="nav-link active">
+            <i class="fas fa-chalkboard"></i>
+              <p>
+                Cycles
+              </p>
+            </a>
+
+            <a href="{{ route('tracing.index') }}" class="nav-link active">
+              <i class="fas fa-user"></i>
+              <p>
+                Tracing
+              </p>
+            </a>
+
+            <a href="task" class="nav-link active">
+            <i class="fas fa-clipboard-list"></i>
+              <p>
+                Taks
+              </p>
+            </a>
+            
+            <a href="task_done" class="nav-link active">
+            <i class="fas fa-clipboard-list"></i>
+              <p>
+                Taks_done
+              </p>
+            </a>
+            
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-book"></i>
+              <p>
+                Modules
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('module.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                  Show
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('task.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Task
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('ce.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    CE
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('ra.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Ra
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-city"></i>
+              <p>
+                Enterprises
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('enterprise.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                  Show
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('belong.index') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Belongs
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
       @if ((Auth::user()->type)=='ad')
 	    @include('layouts.layoutAdmin')
       @elseif((Auth::user()->type)=='al')
