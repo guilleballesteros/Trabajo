@@ -56,7 +56,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
            style="opacity: .8">
       <span class="brand-text font-weight-light">Dual Dam</span>
     </a>
-
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
@@ -66,9 +65,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+          <a href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+            Logout
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+          </form>
         </div>
       </div>
 
+<<<<<<< HEAD
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -190,6 +198,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
         </ul>
       </nav>
+=======
+      @if ((Auth::user()->type)=='ad')
+	    @include('layouts.layoutAdmin')
+      @elseif((Auth::user()->type)=='al')
+      @include('layouts.layoutStudent')
+      @elseif((Auth::user()->type)=='tc')
+      @include('layouts.layoutTutorC')
+      @endif
+>>>>>>> 9b90149ed9a0b0efee1f59e8e8795c19d83a1dd0
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

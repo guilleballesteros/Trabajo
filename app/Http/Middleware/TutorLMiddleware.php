@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class AdminMiddleware
+class TutorLMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,6 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ((auth()->check() && auth()->user()->type === 'ad')){
-            return $next($request);
-        }
-        return redirect('/');
+        return $next($request);
     }
 }

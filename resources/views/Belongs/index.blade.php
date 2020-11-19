@@ -15,20 +15,14 @@
         </thead>
         <tbody>
           @forelse($belongs as $belong)
-            @if( ($belong->deleted) ==0)
             <tr role="row" class="odd">
-              <td class="sorting_1" tabindex="0">{{ $belong->student_id }}</td>
-              <td>{{ $belong->enterprise_id }}</td>
+              <td class="sorting_1" tabindex="0">{{ $belong->student_id }}----{{ $belong->find($belong->id)->student->name }}</td>
+              <td>{{ $belong->enterprise_id }}----{{ $belong->find($belong->id)->enterprise->name }}</td>
               <td>
                 <a class="btn btn-primary" href="{{ route('belong.edit',$belong->id) }}">{{ __("Modify") }}</a>
-                <form method="POST" action="{{ route('belong.destroy',$belong->id) }}">
-                {{ method_field('DELETE') }} 
-                {{ csrf_field() }} 
-                  <button type="submit" name="deleteBelong" class="btn btn-danger"> {{ __("Delete") }} </button> 
-                </form>
+                <a class="btn btn-danger" href="{{ route('belong.destroy',$belong->id) }}">{{ __("Delete") }}</a>
               </td>
            </tr>
-           @endif
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ningún Usuario en este momento") }}

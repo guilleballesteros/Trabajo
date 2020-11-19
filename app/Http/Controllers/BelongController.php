@@ -16,7 +16,7 @@ class BelongController extends Controller
      */
     public function index()
     {
-        $belongs=belong::all();
+        $belongs=belong::all()->where('deleted',0);
         return view('Belongs.index',compact('belongs'));
     }
 
@@ -27,8 +27,8 @@ class BelongController extends Controller
      */
     public function create()
     {
-        $enterprises=enterprise::all();
-        $students=User::all();
+        $enterprises=enterprise::all()->where('deleted',0);
+        $students=User::all()->where('deleted',0);
         return view('Belongs.create',compact('enterprises','students'));
     }
 
@@ -68,8 +68,8 @@ class BelongController extends Controller
     public function edit($id)
     {
         $belong= belong::find($id);
-        $enterprises=enterprise::all();
-        $students=User::all();
+        $enterprises=enterprise::all()->where('deleted',0);
+        $students=User::all()->where('deleted',0);
         return view('Belongs.update',compact('belong','enterprises','students'));
     }
 

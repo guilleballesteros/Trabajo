@@ -14,6 +14,14 @@ class DatabaseSeeder extends Seeder
         factory(\App\task::class,20)->create();
         factory(\App\enterprise::class,20)->create();
         factory(\App\cycle::class,20)->create();
+        factory(\App\User::class)->create([
+            'name'=> 'Raul',
+            'firstname'=> 'Reyes',
+            'email'=> 'raulreyes@gmail.com',
+            'phone'=>'555 666 777',
+            'password'=>'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
+            'type'=>'ad'
+        ]);
         factory(\App\User::class,100)->create();
         factory(\App\belong::class,20)->create();
         factory(\App\study::class,20)->create();

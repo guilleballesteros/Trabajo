@@ -14,7 +14,7 @@ class EnterpriseController extends Controller
      */
     public function index()
     {
-        $enterprises = enterprise::all();
+        $enterprises = enterprise::all()->where('deleted',0);
         return view('Enterprise.index',compact('enterprises'));
     }
 
