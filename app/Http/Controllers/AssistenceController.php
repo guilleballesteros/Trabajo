@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\task_done;
-use App\User;
 
-class TaskDoneController extends Controller
+class AssistenceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,8 @@ class TaskDoneController extends Controller
     public function index()
     {
         //
-        $task_dones = task_done::all()->where('deleted',0);
-        return view('task_done.index',compact('task_dones'));
+        $assisttences = assistence::all()->where('deleted',0);
+        return view('assistences.index',compact('assistences'));
     }
 
     /**
@@ -28,8 +26,8 @@ class TaskDoneController extends Controller
     public function create()
     {
         //
-        $Users=User::all()->where('deleted',0);
-        return view('task_done.create',compact('Users'));
+        $users=User::all()->where('deleted',0);
+        return view('assistences.create',compact('users'));
     }
 
     /**
@@ -38,16 +36,16 @@ class TaskDoneController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         //
         $this->validate(request(),[ 
             'student_id'=>'required',
-            'task_id'=>'required', 
-            'mark'=>'required',
+            'date'=>'required', 
+            'assitence'=>'required',
        ]);
-       task_done::create(request()->all());
-       return redirect()->route('task_done.index')->with('message',['success','Task done creado correctamente']);
+       User::create(request()->all());
+       return redirect()->route('assistences.index')->with('message',['success','Asistencia creada correctamente']);
     }
 
     /**
@@ -70,9 +68,9 @@ class TaskDoneController extends Controller
     public function edit($id)
     {
         //
-        $Users=User::all();
-        $task_dones= task_done::find($id);
-        return view('task_done.edit',compact('task_dones','Users'));
+        $assistences=assistence::all();
+        $users= User::find($id);
+        return view('assistences.edit',compact('assistences','users'));
     }
 
     /**
@@ -87,11 +85,11 @@ class TaskDoneController extends Controller
         //
         $this->validate(request(),[ 
             'student_id'=>'required',
-            'task_id'=>'required', 
-            'mark'=>'required', 
+            'date'=>'required', 
+            'assitence'=>'required',
        ]);
-       task_done:: find($id)->update(request()->all());
-       return redirect()->route('task_done.index')->with('message',['success','Task_done modificado correctamente']);
+       assitence:: find($id)->update(request()->all());
+       return redirect()->route('assitences.index')->with('message',['success','assitence modificada correctamente']);
     }
 
     /**
@@ -103,9 +101,9 @@ class TaskDoneController extends Controller
     public function destroy($id)
     {
         //
-        task_done::find($id)->update([
+        assitence::find($id)->update([
             'deleted'=> '1'
         ]);
-        return back()->with('message', ['success', __("Task done eliminado correctamente")]);
+        return back()->with('message', ['success', __("assitence eliminada correctamente")]);
     }
 }

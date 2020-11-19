@@ -21,8 +21,8 @@
               <td>{{ $task_done->task_id }}</td>
               <td>{{ $task_done->mark }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('task_done.edit',$task_done->student_id) }}">Modificar</a>
-                <form method="POST" action="{{ route('task_done.destroy',$task_done->student_id) }}">
+                <a class="btn btn-primary" href="{{ route('task_done.edit',$task_done->id) }}">Modificar</a>
+                <form method="POST" action="{{ route('task_done.destroy',$task_done->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
                   <button type="submit" name="deleteTask_done" class="btn btn-danger"> {{ __("Delete") }} </button> 
@@ -46,7 +46,7 @@
     </div>
 
     <div class="card-footer">
-      <a href="{{ route('task_done.create') }}" class="btn btn-primary">Add task_done</a>
+      <a href="{{ route('task_done.create') }}" class="btn btn-primary">Add task done</a>
     </div>
  
 @endsection
