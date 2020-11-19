@@ -81,6 +81,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Users
               </p>
             </a>
+
+            <a href="{{ route('assistence.index') }}" class="nav-link active">
+              <i class="fas fa-user"></i>
+              <p>
+                Assistence
+              </p>
+            </a>
             
             <a href="{{ route('cycle.index') }}" class="nav-link active">
             <i class="fas fa-chalkboard"></i>

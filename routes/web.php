@@ -35,3 +35,4 @@ Route::resource('tracing','TracingController');
 Route::resource('cycles','CycleController');
 Route::resource('cycle','CycleController');
 Route::resource('task_done','taskDoneController');
+Route::resource('assistence','AssistenceController');
