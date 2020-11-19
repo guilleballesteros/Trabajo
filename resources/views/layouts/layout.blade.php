@@ -76,7 +76,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
       </div>
 
-<<<<<<< HEAD
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -198,7 +197,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
         </ul>
       </nav>
-=======
       @if ((Auth::user()->type)=='ad')
 	    @include('layouts.layoutAdmin')
       @elseif((Auth::user()->type)=='al')
@@ -206,7 +204,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       @elseif((Auth::user()->type)=='tc')
       @include('layouts.layoutTutorC')
       @endif
->>>>>>> 9b90149ed9a0b0efee1f59e8e8795c19d83a1dd0
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->

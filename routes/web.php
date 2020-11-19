@@ -42,10 +42,7 @@ Route ::group(['middleware'=>'student'], function(){
 
 //futura ruta
 Route::resource('tracing','TracingController');
-<<<<<<< HEAD
 Route::resource('cycles','CycleController');
 Route::resource('cycle','CycleController');
 Route::resource('task_done','taskDoneController');
 Route::resource('assistence','AssistenceController');
-=======
->>>>>>> 9b90149ed9a0b0efee1f59e8e8795c19d83a1dd0
