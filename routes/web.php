@@ -23,15 +23,22 @@ Route::get('/registro', function (){
 });
 
 Auth::routes();
-Route::resource('User','UserController');
 
-Route::resource('ce','CeController');
-Route::resource('ra','RaController');
-Route::resource('task','TaskController');
-Route::resource('enterprise','EnterpriseController');
-Route::resource('belong','BelongController');
-Route::resource('module','ModuleController');
+Route::group(['middleware'=>'admin'], function(){
+    Route::resource('User','UserController');
+    Route::resource('cycle','CycleController');
+    Route::resource('enterprise','EnterpriseController');
+    Route::resource('belong','BelongController');
+});
+Route ::group(['middleware'=>'tutorC'], function(){
+    Route::resource('ce','CeController');
+    Route::resource('ra','RaController');
+    Route::resource('task','TaskController');
+    Route::resource('module','ModuleController');
+});
+Route ::group(['middleware'=>'student'], function(){
+    Route::resource('task_done','taskDoneController');
+});
+
+//futura ruta
 Route::resource('tracing','TracingController');
-Route::resource('cycles','CycleController');
-Route::resource('cycle','CycleController');
-Route::resource('task_done','taskDoneController');

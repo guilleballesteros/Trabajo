@@ -15,10 +15,6 @@
         </thead>
         <tbody>
           @forelse($modules as $module)
-<<<<<<< HEAD
-=======
-            
->>>>>>> 98a39cf89c5350e27e8c0a90cbadc56674720aed
             <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $module->name }}</td>
               <td>{{ $module->cycle_id }}</td>
