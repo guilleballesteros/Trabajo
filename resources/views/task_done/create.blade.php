@@ -22,18 +22,17 @@
 
 			<div class="panel panel-default">
 				<div class="row justify-content-center align-items-center">
-					<h3 class="panel-title">Creating a new user</h3>
+					<h3 class="panel-title">Creating a new task done</h3>
 				</div>
 				<div class="panel-body">					
 					<div class="table-container">
 					<div class="card-primary">
-						<form method="POST" action="{{ route('task.create')}}"  role="form">
+						<form method="POST" action="{{ route('task_done.store')}}"  role="form">
 						{{ csrf_field() }}
 							<div class="card-body">
 							<div class="form-group">
 								<label for="student_id">student_id</label>
 								<select name="student_id" class="form-control select2" style="width: 100%;">
-									<option selected="selected" value="">Empty</option>
 									@foreach($Users as $User)
 									<option value="{{ $User->id }}">{{ $User->id }}------{{ $User->name }}</option>
 									@endforeach
@@ -44,13 +43,13 @@
 								<input name="task_id" type="task_id" class="form-control" id="task_id" placeholder="Enter task_id">
 							</div>
 							<div class="form-group">
-								<label for="mask">Mask</label>
-								<input name="mask" type="mask" class="form-control" id="mask" placeholder="Enter mask">
+								<label for="mark">Mark</label>
+								<input name="mark" type="mark" class="form-control" id="mark" placeholder="Enter mark">
 							</div>
 							<!-- /.card-body -->
 
 							<div class="card-footer">
-							<a href="{{ route('User.index') }}">
+							<a href="{{ route('task_done.index') }}">
 			                    <button type="button" class="btn btn-outline-danger"><i class="fas fa-arrow-circle-left"></i>Back</button>
 		                    </a>
 							<button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i>Create</button>
