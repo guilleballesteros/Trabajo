@@ -19,8 +19,8 @@
               <td class="sorting_1" tabindex="0">{{ $module->name }}</td>
               <td>{{ $module->cycle_id }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('module.edit',$module->id) }}">{{ __("Modify") }}</a>
-                <a class="btn btn-danger" href="{{ route('module.destroy',$module->id) }}">{{ __("Delete") }}</a>
+                <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('module.edit',$module->id) }}">{{ __("Modify") }}</a>
+                <a class="btn btn-danger" data-toggle="tooltip" title="delete" href="{{ route('module.destroy',$module->id) }}">{{ __("Delete") }}</a>
               </td>
            </tr>
           @empty

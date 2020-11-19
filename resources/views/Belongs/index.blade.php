@@ -19,8 +19,8 @@
               <td class="sorting_1" tabindex="0">{{ $belong->student_id }}----{{ $belong->find($belong->id)->student->name }}</td>
               <td>{{ $belong->enterprise_id }}----{{ $belong->find($belong->id)->enterprise->name }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('belong.edit',$belong->id) }}">{{ __("Modify") }}</a>
-                <a class="btn btn-danger" href="{{ route('belong.destroy',$belong->id) }}">{{ __("Delete") }}</a>
+                <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('belong.edit',$belong->id) }}">{{ __("Modify") }}</a>
+                <a class="btn btn-danger" data-toggle="tooltip" title="delete" href="{{ route('belong.destroy',$belong->id) }}">{{ __("Delete") }}</a>
               </td>
            </tr>
           @empty
@@ -40,7 +40,7 @@
     </div>
 
     <div class="card-footer">
-      <a href="{{ route('belong.create') }}" class="btn btn-primary">Add Belong</a>
+      <a href="{{ route('belong.create') }}" class="btn btn-primary">Add relation</a>
     </div>
  
 @endsection
