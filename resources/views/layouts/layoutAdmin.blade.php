@@ -11,10 +11,10 @@
               </p>
             </a>
 
-            <a href="assistence" class="nav-link">
+            <a href="assistance" class="nav-link">
                 <i class="fas fa-clipboard-list"></i>
                 <p>
-                    Assistence
+                    Assistance
                 </p>
             </a>
             

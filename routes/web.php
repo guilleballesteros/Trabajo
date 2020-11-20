@@ -29,7 +29,7 @@ Route::group(['middleware'=>'admin'], function(){
     Route::resource('cycle','CycleController');
     Route::resource('enterprise','EnterpriseController');
     Route::resource('belong','BelongController');
-    Route::resource('assistance','AssistenceController');
+    Route::resource('assistance','AssistanceController');
 });
 Route ::group(['middleware'=>'tutorC'], function(){
     Route::resource('ce','CeController');

@@ -21,17 +21,17 @@
               <td>{{ $assistance->date }}</td>
               <td>{{ $assistance->assistance }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('assistances.edit',$user->id) }}">Modificar</a>
+                <a class="btn btn-primary" href="{{ route('assistances.edit',$user->id) }}">Modify</a>
                 <form method="POST" action="{{ route('assistances.destroy',$user->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
-                  <button type="submit" name="deleteassistance" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                  <button type="submit" name="deleteaAssistance" class="btn btn-danger"> {{ __("Delete") }} </button> 
                 </form>
               </td>
            </tr>
           @empty
               <div class="alert alert-danger">
-                  {{ __("No hay ningún assistances en este momento") }}
+                  {{ __("No hay ningún assistance en este momento") }}
               </div>
           @endforelse
         </tbody>
