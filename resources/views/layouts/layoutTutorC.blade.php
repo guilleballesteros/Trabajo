@@ -11,6 +11,8 @@
                     Modules
                 </p>
             </a>
+        </li>
+        <li class="nav-item">
             
             <a href="{{ route('ra.index') }}" class="nav-link">
                 <i class="fas fa-chalkboard"></i>
@@ -18,19 +20,22 @@
                     RAs
                 </p>
             </a>
+        </li>
+        <li class="nav-item">
             <a href="{{ route('ce.index') }}" class="nav-link">
                 <i class="fas fa-clipboard-check"></i>
                 <p>
                     CEs
                 </p>
             </a>
+        </li>
+        <li class="nav-item">
             <a href="{{ route('task.index') }}" class="nav-link">
             <i class="fas fa-clipboard-list"></i>
                 <p>
                     Tasks
                 </p>
             </a>
-            
         </li>
     </ul>
 </nav>

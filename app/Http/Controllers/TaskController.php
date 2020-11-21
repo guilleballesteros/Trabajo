@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\task;
+use App\User;
 
 class TaskController extends Controller
 {
@@ -14,9 +15,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-       //
-       $task = task::all()->where('deleted',0);;
-        return view('Tasks.index',compact('task'));
+       $modules = User::find(auth()->user()->id)->modules();
+        return view('Tasks.index',compact('modules'));
+        
     }
 
     /**

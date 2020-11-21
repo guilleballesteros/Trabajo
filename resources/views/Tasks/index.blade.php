@@ -11,19 +11,19 @@
           </tr>
         </thead>
         <tbody>
-          @forelse($task as $task)
-            <tr role="row" class="odd">
-              <td class="sorting_1" tabindex="0">{{ $task->number }}</td>
-              <td>{{ $task->description }}</td>
-              <td>
-                <a class="btn btn-primary" href="{{ route('task.edit',$task->id) }}">Modificar</a>
-                <form method="POST" action="{{ route('task.destroy',$task->id) }}">
-                {{ method_field('DELETE') }} 
-                {{ csrf_field() }} 
-                  <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
-                </form>
-              </td>
-           </tr>
+          @forelse($ra->tasks as $task)
+                <tr role="row" class="odd">
+                  <td class="sorting_1" tabindex="0">{{ $task->number }}</td>
+                  <td>{{ $task->description }}</td>
+                  <td>
+                    <a class="btn btn-primary" href="{{ route('task.edit',$task->id) }}">Modificar</a>
+                    <form method="POST" action="{{ route('task.destroy',$task->id) }}">
+                    {{ method_field('DELETE') }} 
+                    {{ csrf_field() }} 
+                      <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                    </form>
+                  </td>
+                </tr>
           @empty
               <div class="alert alert-danger">
                   {{ __("No hay ningún task en este momento") }}

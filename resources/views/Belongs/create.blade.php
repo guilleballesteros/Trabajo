@@ -1,12 +1,3 @@
-@if ((Auth::user()->type)=='ad')
-	@extends('layouts.layout')
-@else
-	@if ((Auth::user()->type)=='al')
-	@extends('layouts.layoutStudent')
-	@else
-	@extends('layouts.layoutTutorC')
-	@endif
-@endif
 @section('content')
 <div class="wrapper">
 	<section class="content">
