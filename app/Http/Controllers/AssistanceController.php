@@ -14,8 +14,8 @@ class AssistenceController extends Controller
     public function index()
     {
         //
-        $assisttences = assistence::all()->where('deleted',0);
-        return view('assistences.index',compact('assistences'));
+        $assistances = assistance::all()->where('deleted',0);
+        return view('assistances.index',compact('assistances'));
     }
 
     /**
@@ -27,7 +27,7 @@ class AssistenceController extends Controller
     {
         //
         $users=User::all()->where('deleted',0);
-        return view('assistences.create',compact('users'));
+        return view('assistances.create',compact('users'));
     }
 
     /**
@@ -42,10 +42,10 @@ class AssistenceController extends Controller
         $this->validate(request(),[ 
             'student_id'=>'required',
             'date'=>'required', 
-            'assitence'=>'required',
+            'assistance'=>'required',
        ]);
        User::create(request()->all());
-       return redirect()->route('assistences.index')->with('message',['success','Asistencia creada correctamente']);
+       return redirect()->route('assistances.index')->with('message',['success','Asistencia creada correctamente']);
     }
 
     /**
@@ -68,9 +68,9 @@ class AssistenceController extends Controller
     public function edit($id)
     {
         //
-        $assistences=assistence::all();
+        $assistances=assistance::all();
         $users= User::find($id);
-        return view('assistences.edit',compact('assistences','users'));
+        return view('assistances.edit',compact('assistances','users'));
     }
 
     /**
@@ -86,10 +86,10 @@ class AssistenceController extends Controller
         $this->validate(request(),[ 
             'student_id'=>'required',
             'date'=>'required', 
-            'assitence'=>'required',
+            'assistance'=>'required',
        ]);
        assitence:: find($id)->update(request()->all());
-       return redirect()->route('assitences.index')->with('message',['success','assitence modificada correctamente']);
+       return redirect()->route('assistances.index')->with('message',['success','assistance modificada correctamente']);
     }
 
     /**
@@ -104,6 +104,6 @@ class AssistenceController extends Controller
         assitence::find($id)->update([
             'deleted'=> '1'
         ]);
-        return back()->with('message', ['success', __("assitence eliminada correctamente")]);
+        return back()->with('message', ['success', __("assistance eliminada correctamente")]);
     }
 }

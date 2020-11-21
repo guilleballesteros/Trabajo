@@ -10,8 +10,14 @@
                 Users
               </p>
             </a>
-          </li>
-          <li class="nav-item">
+
+            <a href="assistance" class="nav-link">
+                <i class="fas fa-clipboard-list"></i>
+                <p>
+                    Assistance
+                </p>
+            </a>
+            
             <a href="{{ route('cycle.index') }}" class="nav-link">
             <i class="fas fa-chalkboard"></i>
               <p>
