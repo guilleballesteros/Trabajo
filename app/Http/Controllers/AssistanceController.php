@@ -16,7 +16,8 @@ class AssistenceController extends Controller
     public function index()
     {
         //
-        $assistances = assistance::all()->where('deleted',0);
+        $user = User::find(auth()->user()->id);
+        $assistances = $user->find($user()->id)->assistances->where('deleted',0);
         return view('assistances.index',compact('assistances'));
     }
 

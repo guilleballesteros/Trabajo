@@ -36,4 +36,10 @@ class User extends Authenticatable
     public function cycle(){
         return $this->belongsTo(cycle::class,'cycle_id');
     }
+    public function assistances(){
+        return $this->hasMany(assistance::class);
+    }
+    public function task_dones(){
+        return $this->hasMany(task_done::class);
+    }
 }
