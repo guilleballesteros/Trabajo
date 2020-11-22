@@ -124,7 +124,7 @@ class AssistanceController extends Controller
     public function destroy($id)
     {
         //
-        assitence::find($id)->update([
+        assistance::find($id)->update([
             'deleted'=> '1'
         ]);
         return back()->with('message', ['success', __("assistance eliminada correctamente")]);

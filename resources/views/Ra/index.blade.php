@@ -43,7 +43,7 @@
     </div>
 
     <div class="card-footer">
-      <a href="{{ route('ra.create')}}" class="btn btn-primary">Añadir RA</a>
+      <a href="{{ route('ra.create')}}" class="btn btn-primary">Add RA</a>
     </div>
  
 @endsection
