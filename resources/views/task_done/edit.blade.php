@@ -27,14 +27,14 @@
 			    	<div class="panel-body">					
     					<div class="table-container">
 	        				<div class="card-primary">
-			    			<form method="POST" action="{{ route('task_done.edit',$task_dones->id) }}"  role="form">
+			    			<form method="POST" action="{{ route('task_done.update',$task_dones->id) }}"  role="form">
 				    		{{ csrf_field() }}
 								<input name="_method" type="hidden" value="PATCH">
                                 <div class="form-group">
     								<label for="student_id">student_id</label>
                                     <select name="student_id" class="form-control select2" style="width: 100%;">
 									@foreach($Users as $User)
-										@if(($task_done->student_id)==($User->id))
+										@if(($task_dones->student_id)==($User->id))
 										<option selected="selected" value="{{ $User->id }}">{{ $User->id }}------{{ $User->name }}</option>
 										@else
 										<option value="{{ $User->id }}">{{ $User->id }}------{{ $User->name }}</option>
