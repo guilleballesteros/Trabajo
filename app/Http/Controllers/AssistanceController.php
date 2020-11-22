@@ -43,16 +43,29 @@ class AssistanceController extends Controller
     {
         //
         $this->validate(request(),[ 
-            'date'=>'required', 
-            'assistance'=>'required',
+            'Martes'=>'required',
+            'Miercoles'=>'required', 
+            'Jueves'=>'required', 
+            'date1'=>'required', 
+            'date2'=>'required',
+            'date3'=>'required', 
        ]);
        assistance::create([
         'student_id'=>auth()->user()->id,
-        'date'=>request()->date, 
-        'assistance'=>request()->assistance,
+        'date'=>request()->date1,
+        'assistance' =>request()->Martes
     ]);
-       User::create(request()->all());
-       return redirect()->route('assistances.index')->with('message',['success','Asistencia creada correctamente']);
+    assistance::create([
+        'student_id'=>auth()->user()->id,
+        'date'=>request()->date2,
+        'assistance' =>request()->Miercoles 
+    ]);
+    assistance::create([
+        'student_id'=>auth()->user()->id,
+        'date'=>request()->date3,
+        'assistance' =>request()->Jueves
+    ]);
+       return redirect()->route('assistance.index')->with('message',['success','Asistencia creada correctamente']);
     }
 
     /**
