@@ -41,6 +41,9 @@
 							<!-- /.card-body -->
 
 							<div class="card-footer">
+							<a href="{{ route('User.index') }}">
+			                    <button type="button" class="btn btn-outline-danger"><i class="fas fa-arrow-circle-left"></i>Back</button>
+		                    </a>
 							<button type="submit" class="btn btn-primary">Submit</button>
 							</div>
               			</form>

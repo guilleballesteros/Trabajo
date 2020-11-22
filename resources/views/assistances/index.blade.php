@@ -10,19 +10,19 @@
           <tr role="row">
             <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Student_id: activate to sort column ascending" aria-sort="descending">Student_id</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending">Date</th>
-            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Assistance: activate to sort column ascending">Assitance</th>
+            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Assistance: activate to sort column ascending">Assistance</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           @forelse($assistances as $assistance)
             <tr role="row" class="odd">
-              <td class="sorting_1" tabindex="0">{{$assistance->student_id}}----{{ $assistance->find($assistance->id)->student->id }}</td>
+              <td class="sorting_1" tabindex="0">{{$assistance->student_id}}----{{ $assistance->find($assistance->id)->student->name }}</td>
               <td>{{ $assistance->date }}</td>
               <td>{{ $assistance->assistance }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('assistance.edit',$user->id) }}">Modify</a>
-                <form method="POST" action="{{ route('assistance.destroy',$user->id) }}">
+                <a class="btn btn-primary" href="{{ route('assistance.edit',$assistance->id) }}">Modify</a>
+                <form method="POST" action="{{ route('assistance.destroy',$assistance->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
                   <button type="submit" name="deleteaAssistance" class="btn btn-danger"> {{ __("Delete") }} </button> 
