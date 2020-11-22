@@ -21,7 +21,7 @@
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Nuevo ciclo</h3>
+					<h3 class="panel-title">Nueva asistencia</h3>
 				</div>
 				<div class="panel-body">					
 					<div class="table-container">
@@ -30,22 +30,17 @@
 							<div class="row">
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="name " id="name" class="form-control input-sm" placeholder="Nombre del ciclo">
+										<input type="text" name="student_id " id="student_id" class="form-control input-sm" placeholder="ID del estudiante">
 									</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="grade" id="grade" class="form-control input-sm" placeholder="Grado">
+										<input type="text" name="date" id="date" class="form-control input-sm" placeholder="Fecha">
 									</div>
 								</div>
                                 <div class="col-xs-6 col-sm-6 col-md-6">
 									<div class="form-group">
-										<input type="text" name="year" id="year" class="form-control input-sm" placeholder="Año">
-									</div>
-								</div>
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-									<div class="form-group">
-										<input type="text" name="autor" id="autor" class="form-control input-sm" placeholder="Autor">
+										<input type="text" name="assistance" id="assistance" class="form-control input-sm" placeholder="Assistencia">
 									</div>
 								</div>
 							</div>
