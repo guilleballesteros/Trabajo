@@ -22,7 +22,7 @@
                 <form method="POST" action="{{ route('ra.destroy',$ra->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
-                  <button type="submit" data-toggle="tooltip" title="delete" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                  <button type="submit" data-toggle="tooltip" title="delete" name="deleteUser" class="btn btn-danger"> <i class="far fa-trash-alt"></i> </button> 
                 </form>
               </td>
            </tr>

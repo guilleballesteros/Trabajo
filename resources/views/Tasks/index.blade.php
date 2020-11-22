@@ -19,11 +19,11 @@
                   <td class="sorting_1" tabindex="0">{{ $ce->find($ce->id)->task->number }}</td>
                   <td>{{  $ce->find($ce->id)->task->description }}</td>
                   <td>
-                    <a class="btn btn-primary" href="{{ route('task.edit',$ce->task_id) }}">Modificar</a>
+                    <a class="btn btn-primary"  data-toggle="tooltip" title="modify" href="{{ route('task.edit',$ce->task_id) }}"><i class="fas fa-edit"></i></a>
                     <form method="POST" action="{{ route('task.destroy',$ce->task_id) }}">
                     {{ method_field('DELETE') }} 
                     {{ csrf_field() }} 
-                      <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                      <button type="submit" data-toggle="tooltip" title="delete" name="deleteUser" class="btn btn-danger"> <i class="far fa-trash-alt"></i> </button> 
                     </form>
                   </td>
                 </tr>
@@ -40,11 +40,11 @@
                   <td class="sorting_1" tabindex="0">{{ $task->number }}</td>
                   <td>{{ $task->description }}</td>
                   <td>
-                    <a class="btn btn-primary" href="{{ route('task.edit',$task->id) }}">Modificar</a>
+                    <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('task.edit',$task->id) }}"><i class="fas fa-edit"></i></a>
                     <form method="POST" action="{{ route('task.destroy',$task->id) }}">
                     {{ method_field('DELETE') }} 
                     {{ csrf_field() }} 
-                      <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                      <button type="submit" data-toggle="tooltip" title="delete" name="deleteUser" class="btn btn-danger"> <i class="far fa-trash-alt"></i> </button> 
                     </form>
                   </td>
                 </tr>
