@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\assistance;
 use App\User;
 
-class AssistenceController extends Controller
+class AssistanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class AssistenceController extends Controller
     {
         //
         $user = User::find(auth()->user()->id);
-        $assistances = $user->find($user()->id)->assistances->where('deleted',0);
+        $assistances = $user->assistances->where('deleted',0);
         return view('assistances.index',compact('assistances'));
     }
 

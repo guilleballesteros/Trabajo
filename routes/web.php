@@ -29,7 +29,6 @@ Route::group(['middleware'=>'admin'], function(){
     Route::resource('cycle','CycleController');
     Route::resource('enterprise','EnterpriseController');
     Route::resource('belong','BelongController');
-    Route::resource('assistance','AssistanceController');
 });
 Route ::group(['middleware'=>'tutorC'], function(){
     Route::resource('ce','CeController');
@@ -39,7 +38,7 @@ Route ::group(['middleware'=>'tutorC'], function(){
 });
 Route ::group(['middleware'=>'student'], function(){
     Route::resource('task_done','taskDoneController');
-    Route::resource('assistance','AssistenceController');
+    Route::resource('assistance','AssistanceController');
 });
 
 //futura ruta
