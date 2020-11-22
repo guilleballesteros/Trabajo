@@ -31,11 +31,6 @@
 			    			<form method="POST" action="{{ route('assistance.update',$assistance->id) }}"  role="form">
 				    		{{ csrf_field() }}
 								<input name="_method" type="hidden" value="PATCH">
-					    		<div class="card-body">
-    						    	<div class="form-group">
-	    							<label for="student_id">Student_id</label>
-		    						<input student_id="student_id"type="student_id" class="form-control" id="student_id" placeholder="Enter student_id" value="{{ $assistance->student_id }}">
-			    				</div>
 				    			<div class="form-group">
 					    			<label for="date">Date</label>
 						    		<input name="date" type="date" class="form-control" id="date" placeholder="Enter date" value="{{ $assistance->date }}">
