@@ -43,7 +43,6 @@ class AssistanceController extends Controller
     {
         //
         $this->validate(request(),[ 
-            'student_id'=>'required',
             'date'=>'required', 
             'assistance'=>'required',
        ]);
