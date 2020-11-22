@@ -31,14 +31,6 @@
 						{{ csrf_field() }}
 							<div class="card-body">
 							<div class="form-group">
-								<label for="student_id">student_id</label>
-								<select name="student_id" class="form-control select2" style="width: 100%;">
-									@foreach($Users as $User)
-									<option value="{{ $User->id }}">{{ $User->id }}------{{ $User->name }}</option>
-									@endforeach
-								</select>
-							</div>
-							<div class="form-group">
 								<label for="task_id">Task_id</label>
 								<input name="task_id" type="task_id" class="form-control" id="task_id" placeholder="Enter task_id">
 							</div>

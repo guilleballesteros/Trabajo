@@ -43,11 +43,14 @@ class TaskDoneController extends Controller
     {
         //
         $this->validate(request(),[ 
-            'student_id'=>'required',
             'task_id'=>'required', 
             'mark'=>'required',
        ]);
-       task_done::create(request()->all());
+       task_done::create([
+        'student_id'=>auth()->user()->id,
+        'task_id'=>request()->task_id, 
+        'mark'=>request()->mark,
+    ]);
        return redirect()->route('task_done.index')->with('message',['success','Task done creado correctamente']);
     }
 

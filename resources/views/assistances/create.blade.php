@@ -21,7 +21,7 @@
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Nueva asistencia</h3>
+					<h3 class="panel-title">New asistencia</h3>
 				</div>
 				<div class="panel-body">					
 					<div class="table-container">
@@ -38,11 +38,16 @@
 										<input type="text" name="date" id="date" class="form-control input-sm" placeholder="Fecha">
 									</div>
 								</div>
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-									<div class="form-group">
-										<input type="text" name="assistance" id="assistance" class="form-control input-sm" placeholder="Assistencia">
-									</div>
+								<div class="form-group">
+								<label for="type">Type</label>
+								<div class="form-group">
+								<select name="type" class="form-control select2" style="width: 100%;">
+									<option selected="selected" value="al">Alumno</option>
+									<option value="te">Tutor laboral</option>
+									<option value="tc">Tutor colegio</option>
+								</select>
 								</div>
+							</div>
 							</div>
 							<div class="row">
 

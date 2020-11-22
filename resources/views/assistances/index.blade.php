@@ -11,7 +11,7 @@
             <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Student_id: activate to sort column ascending" aria-sort="descending">Student_id</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending">Date</th>
             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Assistance: activate to sort column ascending">Assitance</th>
-            <th>Acciones</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -21,8 +21,8 @@
               <td>{{ $assistance->date }}</td>
               <td>{{ $assistance->assistance }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('assistances.edit',$user->id) }}">Modify</a>
-                <form method="POST" action="{{ route('assistances.destroy',$user->id) }}">
+                <a class="btn btn-primary" href="{{ route('assistance.edit',$user->id) }}">Modify</a>
+                <form method="POST" action="{{ route('assistance.destroy',$user->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
                   <button type="submit" name="deleteaAssistance" class="btn btn-danger"> {{ __("Delete") }} </button> 
@@ -40,14 +40,14 @@
             <th rowspan="1" colspan="1">Student_id</th>
             <th rowspan="1" colspan="1">Date</th>
             <th rowspan="1" colspan="1">Assistance</th>
-           
+            <th rowspan="1" colspan="1">Actions</th>
           </tr>
         </tfoot>
       </table>
     </div>
 
     <div class="card-footer">
-      <a href="{{ route('assistances.create') }}" class="btn btn-primary">Add assistance</a>
+      <a href="{{ route('assistance.create') }}" class="btn btn-primary">Add assistance</a>
     </div>
  
 @endsection

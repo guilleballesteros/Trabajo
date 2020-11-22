@@ -47,6 +47,11 @@ class AssistanceController extends Controller
             'date'=>'required', 
             'assistance'=>'required',
        ]);
+       assistance::create([
+        'student_id'=>auth()->user()->id,
+        'date'=>request()->date, 
+        'assistance'=>request()->assistance,
+    ]);
        User::create(request()->all());
        return redirect()->route('assistances.index')->with('message',['success','Asistencia creada correctamente']);
     }
