@@ -88,8 +88,7 @@ class AssistanceController extends Controller
     public function edit($id)
     {
         //
-        $assistances=assistance::all();
-        $users= User::find($id);
+       
         return view('assistances.edit',compact('assistances','users'));
     }
 
