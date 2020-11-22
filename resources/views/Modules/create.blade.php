@@ -27,7 +27,7 @@
 				<div class="panel-body">					
 					<div class="table-container">
 					<div class="card-primary">
-						<form method="POST" action="{{ route('module.create')}}"  role="form">
+						<form method="POST" action="{{ route('module.store')}}"  role="form">
 						{{ csrf_field() }}
 							<div class="card-body">
 							<div class="form-group">

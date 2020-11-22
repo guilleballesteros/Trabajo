@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\module;
 use App\cycle;
+use App\User;
 
 class ModuleController extends Controller
 {
@@ -15,8 +16,17 @@ class ModuleController extends Controller
      */
     public function index()
     {
-       $modules=module::all()->where('deleted',0);
-       return view('Modules.index',compact('modules'));
+        if((auth()->user()->type === 'ad')){
+            $modules=module::all()->where('deleted',0);
+            return view('Modules.index',compact('modules'));
+        }
+        else{
+            $user= User::find(auth()->user()->id);
+            $cycle=$user->find($user->id)->cycle;
+            $modules = $cycle->modules->where('deleted',0);
+            return view('Modules.index',compact('modules'));
+        }
+        
     }
 
     /**
@@ -39,9 +49,9 @@ class ModuleController extends Controller
     public function store(Request $request)
     {
          //
-         $this->validate($request,['name'=>'required', 'cycle_id'=>'required', 'deleted'=>'required']);
-         task::create($request->all());
-         return redirect()->route('Modules.index')->with('success','Module creaded successfully');
+         $this->validate($request,['name'=>'required', 'cycle_id'=>'required']);
+         module::create($request->all());
+         return redirect()->route('module.index')->with('success','Module creaded successfully');
      
     }
 

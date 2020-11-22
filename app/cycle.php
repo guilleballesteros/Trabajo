@@ -17,4 +17,8 @@ class cycle extends Model
     public function modules(){
         return $this->hasMany(module::class);
     }
+
+    public function ras(){
+        return $this->hasManyThrough(ra::class,module::class);
+    }
 }

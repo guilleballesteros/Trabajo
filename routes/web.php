@@ -39,6 +39,7 @@ Route ::group(['middleware'=>'tutorC'], function(){
 });
 Route ::group(['middleware'=>'student'], function(){
     Route::resource('task_done','taskDoneController');
+    Route::resource('assistance','AssistenceController');
 });
 
 //futura ruta

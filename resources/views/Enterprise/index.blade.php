@@ -16,7 +16,11 @@
               <td>{{ $enterprise->email }}</td>
               <td>
                 <a class="btn btn-primary" href="{{ route('enterprise.edit',$enterprise->id) }}">{{ __("Modify") }}</a>
-                <a class="btn btn-danger" href="{{ route('enterprise.destroy',$enterprise->id) }}">{{ __("Delete") }}</a>
+                <form method="POST" action="{{ route('enterprise.destroy',$enterprise->id) }}">
+                {{ method_field('DELETE') }} 
+                {{ csrf_field() }} 
+                  <button type="submit" data-toggle="tooltip" title="delete" name="deletecycle" class="btn btn-danger"> <i class="far fa-trash-alt"></i> </button>
+                </form>
               </td>
           </tr>
           @empty

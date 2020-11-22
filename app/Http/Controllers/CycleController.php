@@ -42,11 +42,10 @@ class CycleController extends Controller
         $this->validate(request(),[ 
             'name'=>'required',
             'grade'=>'required', 
-            'year'=>'required',
-            'autor'=>'required', 
+            'year'=>'required'
        ]);
        User::create(request()->all());
-       return redirect()->route('Cycles.index')->with('message',['success','ciclo creado correctamente']);
+       return redirect()->route('cycle.index')->with('message',['success','ciclo creado correctamente']);
     }
 
     /**
@@ -86,11 +85,10 @@ class CycleController extends Controller
         $this->validate(request(),[ 
             'name'=>'required',
             'grade'=>'required', 
-            'year'=>'required', 
-            'autor'=>'required', 
+            'year'=>'required',  
        ]);
        cycle:: find($id)->update(request()->all());
-       return redirect()->route('Cycle.index')->with('message',['success','ciclo modificado correctamente']);
+       return redirect()->route('cycle.index')->with('message',['success','ciclo modificado correctamente']);
     }
 
     /**

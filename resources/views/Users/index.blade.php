@@ -28,11 +28,23 @@
               <td>{{ $user->email }}</td>
               <td>{{ $user->email_verified_at }}</td>
               <td>{{ $user->type }}</td>
+              @if(($user->enterprise_id)==null)
+              <td>{{$user->enterprise_id}}</td>
+              @else
               <td>{{$user->enterprise_id}}----{{ $user->find($user->id)->enterprise->name }}</td>
+              @endif
+              @if(($user->cycle)==null)
+              <td>{{$user->cycle_id}}</td>
+              @else
               <td>{{$user->cycle_id}}----{{ $user->find($user->id)->cycle->name }}</td>
+              @endif
               <td>
                 <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('User.edit',$user->id) }}"><i class="fas fa-edit"></i></a>
-                <a class="btn btn-danger" data-toggle="tooltip" title="delete" href="{{ route('User.destroy',$user->id) }}"><i class="far fa-trash-alt"></i></a>
+                <form method="POST" action="{{ route('User.destroy',$user->id) }}">
+                    {{ method_field('DELETE') }} 
+                    {{ csrf_field() }} 
+                      <button type="submit" data-toggle="tooltip" title="delete" name="deleteUser" class="btn btn-danger"><i class="far fa-trash-alt"></i></button> 
+                </form>
               </td>
            </tr>
           @empty

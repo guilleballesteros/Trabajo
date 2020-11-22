@@ -43,11 +43,6 @@
 										<input type="text" name="year" id="year" class="form-control input-sm" placeholder="Año">
 									</div>
 								</div>
-                                <div class="col-xs-6 col-sm-6 col-md-6">
-									<div class="form-group">
-										<input type="text" name="autor" id="autor" class="form-control input-sm" placeholder="Autor">
-									</div>
-								</div>
 							</div>
 							<div class="row">
 

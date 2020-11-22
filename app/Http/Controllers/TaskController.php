@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\task;
+use App\User;
 
 class TaskController extends Controller
 {
@@ -14,9 +15,18 @@ class TaskController extends Controller
      */
     public function index()
     {
-       //
-       $task = task::all()->where('deleted',0);;
-        return view('Tasks.index',compact('task'));
+        if((auth()->user()->type === 'ad')){
+            $tasks=task::all()->where('deleted',0);
+            return view('Tasks.index',compact('tasks'));
+        }
+        else{
+            $user= User::find(auth()->user()->id);
+            $cycle=$user->find($user->id)->cycle;
+            $ras = $cycle->ras;
+            return view('Tasks.index',compact('ras'));
+        }
+        
+        
     }
 
     /**
@@ -39,9 +49,9 @@ class TaskController extends Controller
     public function store(Request $request)
     {
          //
-         $this->validate($request,['number'=>'required', 'description'=>'required', 'deleted'=>'required']);
+         $this->validate($request,['number'=>'required', 'description'=>'required']);
          task::create($request->all());
-         return redirect()->route('Tasks.index')->with('success','Registro creado satisfactoriamente');
+         return redirect()->route('task.index')->with('success','Registro creado satisfactoriamente');
      
     }
 
@@ -79,10 +89,10 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,['number'=>'required', 'description'=>'required', 'deleted'=>'required']);
+        $this->validate($request,['number'=>'required', 'description'=>'required']);
  
         task::find($id)->update($request->all());
-        return redirect()->route('Tasks.index')->with('success','Registro actualizado satisfactoriamente');
+        return redirect()->route('task.index')->with('success','Registro actualizado satisfactoriamente');
  
     }
 
