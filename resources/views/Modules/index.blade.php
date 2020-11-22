@@ -17,10 +17,14 @@
           @forelse($modules as $module)
             <tr role="row" class="odd">
               <td class="sorting_1" tabindex="0">{{ $module->name }}</td>
-              <td>{{ $module->cycle_id }}</td>
+              <td>{{ $module->cycle_id }}----{{ $module->find($module->id)->cycle->name }}</td>
               <td>
-                <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('module.edit',$module->id) }}">{{ __("Modify") }}</a>
-                <a class="btn btn-danger" data-toggle="tooltip" title="delete" href="{{ route('module.destroy',$module->id) }}">{{ __("Delete") }}</a>
+                <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('module.edit',$module->id) }}"><i class="fas fa-edit"></i></a>
+                <form method="POST" action="{{ route('module.destroy',$module->id) }}">
+                    {{ method_field('DELETE') }} 
+                    {{ csrf_field() }} 
+                      <button type="submit" data-toggle="tooltip" title="delete" name="deleteUser" class="btn btn-danger"><i class="far fa-trash-alt"></i></button> 
+                </form>
               </td>
            </tr>
           @empty

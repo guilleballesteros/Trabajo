@@ -18,11 +18,11 @@
               <td>{{ $ra->description }}</td>
               <td>{{ $ra->module_id }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('ra.edit',$ra->id) }}">Modificar</a>
+                <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('ra.edit',$ra->id) }}"><i class="fas fa-edit"></i></a>
                 <form method="POST" action="{{ route('ra.destroy',$ra->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
-                  <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                  <button type="submit" data-toggle="tooltip" title="delete" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
                 </form>
               </td>
            </tr>

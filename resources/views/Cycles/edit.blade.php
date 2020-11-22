@@ -44,12 +44,7 @@
 					    			<label for="year">Year</label>
 						    		<input name="year" type="year" class="form-control" id="year" placeholder="Enter year" value="{{ $cycle->year }}">
     							</div>
-					    		<div class="form-group">
-						    		<label for="autor">Autor</label>
-							    	<input name="email" type="autor" class="form-control" id="autor" placeholder="Enter autor" value="{{ $cycle->autor }}">
-    							</div>
 							    <!-- /.card-body -->
-
 	    						<div class="card-footer">
     							<button type="submit" class="btn btn-primary">Update</button>
 	    						</div>

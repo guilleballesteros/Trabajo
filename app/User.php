@@ -33,7 +33,6 @@ class User extends Authenticatable
     public function belongs(){
         return $this->hasMany(belong::class);
     }
-
     public function cycle(){
         return $this->belongsTo(cycle::class,'cycle_id');
     }

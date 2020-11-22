@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ra;
+use App\User;
 
 class RaController extends Controller
 {
@@ -16,8 +17,16 @@ class RaController extends Controller
     public function index()
     {
        //
-       $ra=ra::all()->where('deleted',0);;
-       return view('Ra.index',compact('ra'));
+        if((auth()->user()->type === 'ad')){
+            $ra=ra::all()->where('deleted',0);
+        }
+        else{
+            $user= User::find(auth()->user()->id);
+            $cycle=$user->find($user->id)->cycle;
+            $ra = $cycle->ras->where('deleted',0);
+        }
+        
+        return view('Ra.index',compact('ra'));
     }
 
     /**
@@ -40,7 +49,7 @@ class RaController extends Controller
     public function store(Request $request)
     {
          //
-         $this->validate($request,['number'=>'required', 'description'=>'required', 'module_id'=>'required', 'deleted'=>'required']);
+         $this->validate($request,['number'=>'required', 'description'=>'required', 'module_id'=>'required']);
          ra::create($request->all());
          return redirect()->route('Ra.index')->with('success','Registro creado satisfactoriamente');
      
@@ -79,10 +88,9 @@ class RaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,['number'=>'required', 'description'=>'required', 'module_id'=>'required', 'deleted'=>'required']);
- 
+        $this->validate($request,['number'=>'required', 'description'=>'required', 'module_id'=>'required']);
         ra::find($id)->update($request->all());
-        return redirect()->route('Ra.index')->with('success','Registro actualizado satisfactoriamente');
+        return redirect()->route('ra.index')->with('success','Registro actualizado satisfactoriamente');
  
     }
 

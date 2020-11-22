@@ -19,8 +19,12 @@
               <td class="sorting_1" tabindex="0">{{ $belong->student_id }}----{{ $belong->find($belong->id)->student->name }}</td>
               <td>{{ $belong->enterprise_id }}----{{ $belong->find($belong->id)->enterprise->name }}</td>
               <td>
-                <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('belong.edit',$belong->id) }}">{{ __("Modify") }}</a>
-                <a class="btn btn-danger" data-toggle="tooltip" title="delete" href="{{ route('belong.destroy',$belong->id) }}">{{ __("Delete") }}</a>
+                <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('belong.edit',$belong->id) }}"><i class="fas fa-edit"></i></a>
+                <form method="POST" action="{{ route('belong.destroy',$belong->id) }}">
+                    {{ method_field('DELETE') }} 
+                    {{ csrf_field() }} 
+                      <button type="submit" data-toggle="tooltip" title="delete" name="deleteUser" class="btn btn-danger"><i class="far fa-trash-alt"></i></button> 
+                </form>
               </td>
            </tr>
           @empty

@@ -15,27 +15,55 @@
           </tr>
         </thead>
         <tbody>
-          @forelse($ce as $ce)
-            <tr role="row" class="odd">
-              <td class="sorting_1" tabindex="0">{{ $ce->word }}</td>
-              <td>{{ $ce->description }}</td>
-              <td>{{ $ce->ra_id }}</td>
-              <td>{{ $ce->task_id }}</td>
-              <td>{{ $ce->mark }}</td>
-              <td>
-                <a class="btn btn-primary" href="{{ route('ce.edit',$ce->id) }}">Modificar</a>
-                <form method="POST" action="{{ route('ce.destroy',$ce->id) }}">
-                {{ method_field('DELETE') }} 
-                {{ csrf_field() }} 
-                  <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
-                </form>
-              </td>
-           </tr>
-          @empty
-              <div class="alert alert-danger">
-                  {{ __("No hay ningún CE en este momento") }}
-              </div>
-          @endforelse
+        @if((Auth::user()->type)=='tc')
+          @forelse($ras as $ra)
+              @foreach(($ra->find($ra->id)->ces) as $ce)
+              @if(($ce->deleted)==0)
+              <tr role="row" class="odd">
+                <td class="sorting_1" tabindex="0">{{ $ce->word }}</td>
+                <td>{{ $ce->description }}</td>
+                <td>{{ $ce->ra_id }}</td>
+                <td>{{ $ce->task_id }}</td>
+                <td>{{ $ce->mark }}</td>
+                <td>
+                  <a class="btn btn-primary" data-toggle="tooltip" title="modify" href="{{ route('ce.edit',$ce->id) }}"><i class="fas fa-edit"></i></a>
+                  <form method="POST" data-toggle="tooltip" title="delete" action="{{ route('ce.destroy',$ce->id) }}">
+                  {{ method_field('DELETE') }} 
+                  {{ csrf_field() }} 
+                    <button type="submit" name="deleteUser" class="btn btn-danger"><i class="far fa-trash-alt"></i></button> 
+                  </form>
+                </td>
+              </tr>
+              @endif
+              @endforeach
+            @empty
+                <div class="alert alert-danger">
+                    {{ __("No hay ningún task en este momento") }}
+                </div>
+            @endforelse
+        @else
+            @forelse($ces as $ce)
+              <tr role="row" class="odd">
+                <td class="sorting_1" tabindex="0">{{ $ce->word }}</td>
+                <td>{{ $ce->description }}</td>
+                <td>{{ $ce->ra_id }}</td>
+                <td>{{ $ce->task_id }}</td>
+                <td>{{ $ce->mark }}</td>
+                <td>
+                  <a class="btn btn-primary" href="{{ route('ce.edit',$ce->id) }}">Modificar</a>
+                  <form method="POST" action="{{ route('ce.destroy',$ce->id) }}">
+                  {{ method_field('DELETE') }} 
+                  {{ csrf_field() }} 
+                    <button type="submit" name="deleteUser" class="btn btn-danger"> {{ __("Delete") }} </button> 
+                  </form>
+                </td>
+            </tr>
+            @empty
+                <div class="alert alert-danger">
+                    {{ __("No hay ningún CE en este momento") }}
+                </div>
+            @endforelse
+          @endif
         </tbody>
         <tfoot>
           <tr>

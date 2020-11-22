@@ -13,9 +13,6 @@ class ra extends Model
     public function ces(){
         return $this->hasMany(ce::class);
     }
-    public function tasks(){
-        return $this->hasManyThrough(task::class,ce::class);
-    }
     public function module(){
         return $this->belongsTo(module::class,'module_id');
     }

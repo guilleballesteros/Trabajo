@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ce;
+use App\User;
 
 class CeController extends Controller
 {
@@ -15,9 +16,17 @@ class CeController extends Controller
          */
         public function index()
         {
-           //
-           $ce=ce::all()->where('deleted',0);;
-           return view('CE.index',compact('ce'));
+           
+            if((auth()->user()->type === 'ad')){
+                $ces=ce::all()->where('deleted',0);
+                return view('CE.index',compact('ces'));
+            }
+            else{
+                $user= User::find(auth()->user()->id);
+                $cycle=$user->find($user->id)->cycle;
+                $ras = $cycle->ras->where('deleted',0);
+                return view('CE.index',compact('ras'));
+            }
         }
     
         /**
@@ -81,7 +90,7 @@ class CeController extends Controller
         {
             $this->validate($request,['word'=>'required', 'description'=>'required', 'ra_id'=>'required', 'task_id'=>'required', 'mark'=>'required']);     
             ce::find($id)->update($request->all());
-            return redirect()->route('CE.index')->with('success','Registro actualizado satisfactoriamente');
+            return redirect()->route('ce.index')->with('success','Registro actualizado satisfactoriamente');
      
         }
     

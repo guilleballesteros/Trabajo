@@ -22,10 +22,10 @@ class CreateUsersTable extends Migration
             $table->string('email_verified_at')->nullable();
             $table->string('password');
             $table->string('type')->default('al');
-            $table->unsignedInteger('enterprise_id');
-            $table->foreign('enterprise_id')->references('id')->on('enterprises')->nullable();
-            $table->unsignedInteger('cycle_id');
-            $table->foreign('cycle_id')->references('id')->on('cycles')->nullable();
+            $table->unsignedInteger('enterprise_id')->nullable();
+            $table->foreign('enterprise_id')->references('id')->on('enterprises');
+            $table->unsignedInteger('cycle_id')->nullable();
+            $table->foreign('cycle_id')->references('id')->on('cycles');
             $table->rememberToken();
             $table->boolean('deleted')->default(false);
             $table->timestamps();

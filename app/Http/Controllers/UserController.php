@@ -46,10 +46,17 @@ class UserController extends Controller
              'email'=>'required',
              'password'=>'required', 
              'phone'=>'required', 
-             'cycle_id'=>'required',
-             'enterprise_id'=>'required'
         ]);
-        User::create(request()->all());
+        User::create([
+            'name'=>request()->name,
+            'firstname'=>request()->firstname, 
+            'email'=>request()->email,
+            'password'=>bcrypt(request()->password), 
+            'phone'=>request()->phone, 
+            'cycle_id'=>request()->cycle_id,
+            'enterprise_id'=>request()->enterprise_id
+
+        ]);
         return redirect()->route('User.index')->with('message',['success','Usuario creado correctamente']);
      
     }
@@ -93,8 +100,6 @@ class UserController extends Controller
             'firstname'=>'required', 
             'email'=>'required', 
             'phone'=>'required', 
-            'cycle_id'=>'required',
-            'enterprise_id'=>'required'
        ]);
        User:: find($id)->update(request()->all());
        return redirect()->route('User.index')->with('message',['success','Usuario modificado correctamente']);
