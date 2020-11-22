@@ -16,7 +16,8 @@ class TaskDoneController extends Controller
     public function index()
     {
         //
-        $task_dones = task_done::all()->where('deleted',0);
+        $user = User::find(auth()->user()->id);
+        $task_dones = $user->find($user->id)->task_dones;
         return view('task_done.index',compact('task_dones'));
     }
 

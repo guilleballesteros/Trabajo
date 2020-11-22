@@ -3,7 +3,7 @@
 
   <div class="row"><div class="col-sm-12">
     <div class="row justify-content-center align-items-center">
-	    <h1 class="panel-title">Task_dones</h1>
+	    <h1 class="panel-title">Task dones</h1>
 		</div>
       <table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
         <thead>
@@ -21,7 +21,7 @@
               <td>{{ $task_done->task_id }}</td>
               <td>{{ $task_done->mark }}</td>
               <td>
-                <a class="btn btn-primary" href="{{ route('task_done.edit',$task_done->id) }}">Modificar</a>
+                <a class="btn btn-primary" href="{{ route('task_done.edit',$task_done->id) }}">Modify</a>
                 <form method="POST" action="{{ route('task_done.destroy',$task_done->id) }}">
                 {{ method_field('DELETE') }} 
                 {{ csrf_field() }} 
@@ -39,7 +39,7 @@
           <tr>
             <th rowspan="1" colspan="1">Student_id</th>
             <th rowspan="1" colspan="1">Task_id</th>
-            <th rowspan="1" colspan="1">Mask</th>
+            <th rowspan="1" colspan="1">Mark</th>
           </tr>
         </tfoot>
       </table>
