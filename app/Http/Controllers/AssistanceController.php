@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\assistance;
+use App\User;
 
 class AssistenceController extends Controller
 {
