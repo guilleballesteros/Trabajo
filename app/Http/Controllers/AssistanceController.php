@@ -92,9 +92,13 @@ class AssistanceController extends Controller
     {
         //
         $this->validate(request(),[ 
-            'student_id'=>'required',
+            'assistance'=>'required',
+            'date'=>'required',
+            'assistance'=>'required',
             'date'=>'required', 
             'assistance'=>'required',
+            'date'=>'required',
+           
        ]);
        assitence:: find($id)->update(request()->all());
        return redirect()->route('assistances.index')->with('message',['success','assistance modificada correctamente']);

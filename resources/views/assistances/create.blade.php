@@ -28,24 +28,47 @@
 						<form method="POST" action="{{route('assistance.store') }}"  role="form">
 							{{ csrf_field() }}
 							<div class="row">
-								<div class="col-xs-6 col-sm-6 col-md-6">
-									<div class="form-group">
-										<input type="text" name="student_id " id="student_id" class="form-control input-sm" placeholder="ID del estudiante">
-									</div>
-								</div>
-								<div class="col-xs-6 col-sm-6 col-md-6">
-									<div class="form-group">
-										<input type="text" name="date" id="date" class="form-control input-sm" placeholder="Fecha">
-									</div>
-								</div>
 								<div class="form-group">
-								<label for="type">Type</label>
+								<label for="type">Miercoles</label>
 								<div class="form-group">
-								<select name="type" class="form-control select2" style="width: 100%;">
-									<option selected="selected" value="al">Alumno</option>
-									<option value="te">Tutor laboral</option>
-									<option value="tc">Tutor colegio</option>
+								<select name="Miercoles" class="form-control select2" style="width: 100%;">
+									<option selected="selected" value="al">Asistido</option>
+									<option value="te">Falta justificada</option>
+									<option value="tc">Falta sin justificar</option>
 								</select>
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="date" name="date" id="date" class="form-control input-sm" placeholder="Fecha">
+									</div>
+								</div>
+								</div>
+								<div class="form-group">
+								<label for="type">Jueves</label>
+								<div class="form-group">
+								<select name="Jueves" class="form-control select2" style="width: 100%;">
+									<option selected="selected" value="al">Asistido</option>
+									<option value="te">Falta justificada</option>
+									<option value="tc">Falta sin justificar</option>
+								</select>
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="date" name="date" id="date" class="form-control input-sm" placeholder="Fecha">
+									</div>
+								</div>
+								</div>
+								<div class="form-group">
+								<label for="type">Viernes</label>
+								<div class="form-group">
+								<select name="Viernes" class="form-control select2" style="width: 100%;">
+									<option selected="selected" value="al">Asistido</option>
+									<option value="te">Falta justificada</option>
+									<option value="tc">Falta sin justificar</option>
+								</select>
+								<div class="col-xs-6 col-sm-6 col-md-6">
+									<div class="form-group">
+										<input type="date" name="date" id="date" class="form-control input-sm" placeholder="Fecha">
+									</div>
+								</div>
 								</div>
 							</div>
 							</div>
@@ -53,7 +76,7 @@
 
 								<div class="col-xs-12 col-sm-12 col-md-12">
 									<input type="submit"  value="Guardar" class="btn btn-success btn-block">
-									<a href="{{ route('assistance.index') }}" class="btn btn-info btn-block" >Atrás</a>
+									<a href="{{ route('assistance.index') }}" class="btn btn-info btn-block" >Back</a>
 								</div>	
 
 							</div>
